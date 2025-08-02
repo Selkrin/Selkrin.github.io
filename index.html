@@ -1,54 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Your Homebuilding Handbook</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px;
-    }
-
-    .button-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .nav-button {
-      padding: 12px 24px;
-      font-size: 16px;
-      border: none;
-      background-color: #4CAF50;
-      color: white;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-    }
-
-    .nav-button:hover {
-      background-color: #45a049;
-    }
-  </style>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <div class="container">
+    <img src="images/17395-2.png" alt="Isometric House" class="background">
 
-  <h1>Your Homebuilding Handbook</h1>
+    <!-- Hotspot Buttons (no lines) -->
+    <div class="hotspot kitchen">
+      <a href="#kitchen-info" class="label">Kitchen</a>
+    </div>
 
-  <div class="button-group">
-    <button class="nav-button">Planning</button>
-    <button class="nav-button">Financing</button>
-    <button class="nav-button">Design</button>
-    <button class="nav-button">Permits</button>
-    <button class="nav-button">Construction</button>
-    <button class="nav-button">Inspections</button>
-    <button class="nav-button">Move-In</button>
-    <button class="nav-button">Maintenance</button>
+    <div class="hotspot bedroom">
+      <a href="#bedroom-info" class="label">Bedroom</a>
+    </div>
+
+    <div class="hotspot livingroom">
+      <a href="#livingroom-info" class="label">Living Room</a>
+    </div>
+
+    <div class="hotspot foundation">
+      <a href="#foundation-info" class="label">Foundation</a>
+    </div>
+
+    <div class="hotspot floor-framing">
+      <a href="#floor-framing-info" class="label">Floor Framing</a>
+    </div>
+
+    <div class="hotspot roof-framing">
+      <a href="#roof-framing-info" class="label">Roof Framing</a>
+    </div>
   </div>
-
 </body>
 </html>
