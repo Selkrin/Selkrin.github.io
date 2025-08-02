@@ -1,16 +1,23 @@
-/* Reset & Body Styles */
+/* ===================
+   Base Styles
+=================== */
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
+  background-color: #e0f7f5; /* Teal-tinted background */
 }
 
-/* Container for Image and Hotspots */
+/* ===================
+   Container & Background Image
+=================== */
 .container {
   position: relative;
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
+  background-color: white;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
 }
 
 .background {
@@ -18,13 +25,28 @@ body {
   display: block;
 }
 
-/* Hotspot Buttons */
+/* ===================
+   Hotspot Buttons
+=================== */
 .hotspot {
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 10;
+  opacity: 0;
+  animation: fadeInZoom 1s ease forwards;
+}
+
+@keyframes fadeInZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .label {
@@ -35,26 +57,28 @@ body {
   border-radius: 6px;
   font-size: 14px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .label:hover {
   background-color: #005ecb;
+  transform: scale(1.05);
 }
 
-/* Position each button based on image layout */
-.kitchen        { top: 55%; left: 20%; }
-.bedroom        { top: 35%; left: 35%; }
-.livingroom     { top: 65%; left: 40%; }
-.foundation     { top: 70%; left: 65%; }
-.floor-framing  { top: 58%; left: 70%; }
-.roof-framing   { top: 20%; left: 62%; }
-.bathroom       { top: 30%; left: 55%; }
+/* Hotspot positions */
+.kitchen        { top: 55%; left: 20%; animation-delay: 0.1s; }
+.bedroom        { top: 35%; left: 35%; animation-delay: 0.2s; }
+.livingroom     { top: 65%; left: 40%; animation-delay: 0.3s; }
+.foundation     { top: 70%; left: 65%; animation-delay: 0.4s; }
+.floor-framing  { top: 58%; left: 70%; animation-delay: 0.5s; }
+.roof-framing   { top: 20%; left: 62%; animation-delay: 0.6s; }
+.bathroom       { top: 30%; left: 55%; animation-delay: 0.7s; }
 
-/* NAVIGATION BAR */
+/* ===================
+   Navigation Bar
+=================== */
 .navbar {
   background-color: #333;
-  overflow: hidden;
   position: sticky;
   top: 0;
   z-index: 999;
@@ -75,7 +99,7 @@ body {
   width: auto;
 }
 
-/* NAVIGATION MENU */
+/* Nav list */
 .nav-list {
   list-style: none;
   display: flex;
@@ -99,21 +123,30 @@ body {
   background-color: #555;
 }
 
-/* DROPDOWN MENU */
+/* Dropdown fix */
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+/* Dropdown menu */
 .dropdown-menu {
   display: none;
   position: absolute;
   background-color: #444;
   min-width: 160px;
-  z-index: 1000;
+  top: 100%;
+  left: 0;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  width: 100%;
 }
 
 .dropdown-menu li a {
   padding: 12px 16px;
-}
-
-.dropdown:hover .dropdown-menu {
+  color: white;
   display: block;
 }
 
@@ -121,7 +154,31 @@ body {
   background-color: #555;
 }
 
-/* RESPONSIVE DESIGN */
+/* ===================
+   Footer
+=================== */
+footer {
+  background-color: #333;
+  color: #eee;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  margin-top: 60px;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer a {
+  color: #00d1c1;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ===================
+   Responsive Design
+=================== */
 @media (max-width: 768px) {
   .logo img {
     height: 36px;
