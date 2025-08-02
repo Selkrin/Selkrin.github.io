@@ -40,9 +40,9 @@ body {
 }
 
 /* Position each button based on image layout */
-.kitchen        { top: 65%; left: 15%; }
-.bedroom        { top: 20%; left: 45%; }
-.livingroom     { top: 55%; left: 35%; }
-.foundation     { top: 90%; left: 40%; }
-.floor-framing  { top: 80%; left: 30%; }
-.roof-framing   { top: 10%; left: 60%; }
+.kitchen        { top: 55%; left: 20%; }
+.bedroom        { top: 35%; left: 35%; }
+.livingroom     { top: 65%; left: 40%; }
+.foundation     { top: 70%; left: 65%; }
+.floor-framing  { top: 58%; left: 70%; }
+.roof-framing   { top: 20%; left: 62%; }
