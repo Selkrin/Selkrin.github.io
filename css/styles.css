@@ -72,13 +72,14 @@ body {
 }
 
 /* Hotspot positions */
-.kitchen        { top: 55%; left: 20%; animation-delay: 0.1s; }
-.bedroom        { top: 35%; left: 35%; animation-delay: 0.2s; }
-.livingroom     { top: 65%; left: 40%; animation-delay: 0.3s; }
-.foundation     { top: 70%; left: 65%; animation-delay: 0.4s; }
-.floor-framing  { top: 58%; left: 70%; animation-delay: 0.5s; }
-.roof-framing   { top: 20%; left: 62%; animation-delay: 0.6s; }
-.bathroom       { top: 30%; left: 55%; animation-delay: 0.7s; }
+.kitchen        { top: 55%; left: 20%; animation-delay: 0.5s; }
+.bedroom        { top: 35%; left: 35%; animation-delay: 0.4s; }
+.livingroom     { top: 65%; left: 40%; animation-delay: 0.6s; }
+.foundation     { top: 70%; left: 65%; animation-delay: 0.8s; }
+.floors         { top: 58%; left: 70%; animation-delay: 0.7s; }
+.roof           { top: 20%; left: 62%; animation-delay: 0.1s; }
+.ceilings       { top: 25%; left: 60%; animation-delay: 0.2s; }
+.bathroom       { top: 30%; left: 55%; animation-delay: 0.3s; }
 
 /* ===================
    Navigation Bar
