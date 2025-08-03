@@ -242,9 +242,9 @@ footer a:hover {
 .link-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
-  padding: 0 10px;
+  gap: 40px;
+  margin-top: 30px;
+  padding: 0 30px;
 }
 
 .nav-box {
@@ -259,5 +259,5 @@ footer a:hover {
 
 .nav-box:hover {
   background-color: #005ecb;
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
