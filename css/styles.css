@@ -133,6 +133,40 @@ body {
 }
 
 /* ===================
+   Sub-Navigation Bar
+=================== */
+
+.subnav {
+  margin-top: 20px;
+  background-color: #f4f8fb;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.subnav-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+.subnav-list li a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+
+.subnav-list li a:hover {
+  background-color: #e0f0ff;
+}
+
+/* ===================
    Dropdown Menus (fade + scale)
 =================== */
 .dropdown-menu {
