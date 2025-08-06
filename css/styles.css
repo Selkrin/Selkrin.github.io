@@ -81,6 +81,10 @@ body {
 .roof           { top: 15%; left: 65%; animation-delay: 0.1s; }
 .ceilings       { top: 22%; left: 64%; animation-delay: 0.2s; }
 .bathroom       { top: 30%; left: 55%; animation-delay: 0.3s; }
+.doors          { top: 10%; left: 15%; animation-delay: 0.3s; }
+.garage         { top: 10%; left: 25%; animation-delay: 0.3s; }
+.walls          { top: 10%; left: 35%; animation-delay: 0.3s; }
+.windows        { top: 10%; left: 45%; animation-delay: 0.3s; }
 
 /* ===================
    Navigation Bar
