@@ -77,14 +77,14 @@ body {
 .bedroom        { top: 35%; left: 35%; animation-delay: 0.4s; }
 .livingroom     { top: 65%; left: 40%; animation-delay: 0.6s; }
 .foundation     { top: 70%; left: 65%; animation-delay: 0.8s; }
-.floors         { top: 58%; left: 70%; animation-delay: 0.7s; }
+.floors         { top: 60%; left: 70%; animation-delay: 0.7s; }
 .roof           { top: 15%; left: 65%; animation-delay: 0.1s; }
 .ceilings       { top: 22%; left: 64%; animation-delay: 0.2s; }
 .bathroom       { top: 30%; left: 55%; animation-delay: 0.3s; }
-.doors          { top: 10%; left: 15%; animation-delay: 0.3s; }
-.garage         { top: 10%; left: 25%; animation-delay: 0.3s; }
-.walls          { top: 10%; left: 35%; animation-delay: 0.3s; }
-.windows        { top: 10%; left: 45%; animation-delay: 0.3s; }
+.doors          { top: 75%; left: 50%; animation-delay: 0.3s; }
+.garage         { top: 60%; left: 85%; animation-delay: 0.3s; }
+.walls          { top: 20%; left: 30%; animation-delay: 0.3s; }
+.windows        { top: 55%; left: 74%; animation-delay: 0.3s; }
 
 /* ===================
    Navigation Bar
