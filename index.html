@@ -1,135 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Homebuilding Handbook</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/normalize.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Homebuilding Handbook</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="images/YHBH Logo2.png">
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="logo">
-        <img src="images/YHBH Logo2.png" alt="Your Homebuilding Handbook Logo">
-      </a>
-      
-      <ul class="nav-list">
-        <li><a href="index.html">Home</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle">Building Sections</a>
-          <ul class="dropdown-menu">
-            <li><a href="bathroom/index.html">Bathroom</a></li>
-            <li><a href="bedroom/index.html">Bedroom</a></li>
-            <li><a href="doors/index.html">Doors</a></li>
-            <li><a href="kitchen/index.html">Kitchen</a></li>
-          </ul>
-        </li>
-        <li><a href="resources.html">Resources</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Your Homebuilding Handbook</h1>
-      <p>Your complete guide to residential construction and home renovation.</p>
-      <a href="#sections" class="btn">Browse Building Sections</a>
-    </div>
-  </header>
-
-  <!-- Featured Sections -->
-  <section id="sections" class="featured-sections">
-    <h2>Popular Building Topics</h2>
-    
-    <div class="sections-grid">
-      <article class="section-card">
-        <a href="kitchen/index.html">
-          <img src="images/kitchen-preview.jpg" alt="Kitchen Remodeling">
-          <h3>Kitchen Design</h3>
-          <p>Learn how to create your dream kitchen with practical guides and tutorials.</p>
-        </a>
-      </article>
-      
-      <article class="section-card">
-        <a href="bathroom/index.html">
-          <img src="images/bathroom-preview.jpg" alt="Bathroom Renovation">
-          <h3>Bathroom Remodeling</h3>
-          <p>Transform your bathroom with expert advice on plumbing, fixtures, and design.</p>
-        </a>
-      </article>
-      
-      <article class="section-card">
-        <a href="doors/index.html">
-          <img src="images/doors-preview.jpg" alt="Door Installation">
-          <h3>Door Installation</h3>
-          <p>Discover the best practices for installing and maintaining various door types.</p>
-        </a>
-      </article>
-    </div>
-  </section>
-
-  <!-- Home Preview -->
-  <section class="home-preview-section">
-    <h2>Explore Your Home</h2>
-    <p>Click on sections to learn more about home construction:</p>
-    
-    <div class="home-preview">
-      <img src="images/home-floor-plan.png" alt="Home Floor Plan" class="floor-plan">
-      
-      <div class="hotspots">
-        <a href="kitchen/index.html" 
-           class="hotspot kitchen"
-           title="Kitchen design and remodeling tips">
-          <span>1</span>
-        </a>
-        
-        <a href="bathroom/index.html" 
-           class="hotspot bathroom"
-           title="Bathroom renovation ideas">
-          <span>2</span>
-        </a>
-        
-        <a href="livingroom/index.html" 
-           class="hotspot living-room"
-           title="Living room design concepts">
-          <span>3</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Resources Section -->
-  <section class="resources-section">
-    <h2>Useful Resources</h2>
-    <p>Download templates, checklists, and guides to help with your homebuilding projects.</p>
-    
-    <div class="resources-grid">
-      <a href="downloads/checklist.pdf" download>
-        <img src="images/checklist-icon.png" alt="Checklist">
-        <h3>Building Checklist</h3>
-      </a>
-      
-      <a href="downloads/blueprint-template.docx" download>
-        <img src="images/blueprint-icon.png" alt="Blueprint Template">
-        <h3>Blueprint Template</h3>
-      </a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="main-footer">
-    <p>&copy; 2025 Your Homebuilding Handbook. All rights reserved.</p>
-    <nav class="footer-nav">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-      <a href="contact.html">Contact Us</a>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/YHBH Logo2.png" alt="Your Homebuilding Handbook Logo" loading="eager">
+            </a>
+            
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                
+                <li class="dropdown">
+                    <a href="#">Building Sections</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-column">
+                            <h4>Interior Spaces</h4>
+                            <a href="bathroom/index.html">Bathroom</a>
+                            <a href="bedroom/index.html">Bedroom</a>
+                            <a href="kitchen/index.html">Kitchen</a>
+                            <a href="livingroom/index.html">Living Room</a>
+                        </div>
+                        
+                        <div class="dropdown-column">
+                            <h4>Structural Elements</h4>
+                            <a href="ceilings/index.html">Ceilings</a>
+                            <a href="floors/index.html">Floors</a>
+                            <a href="walls/index.html">Walls</a>
+                        </div>
+                        
+                        <div class="dropdown-column">
+                            <h4>Exterior Features</h4>
+                            <a href="doors/index.html">Doors</a>
+                            <a href="foundation/index.html">Foundation</a>
+                            <a href="garage/index.html">Garage</a>
+                            <a href="roof/index.html">Roof</a>
+                            <a href="windows/index.html">Windows</a>
+                        </div>
+                    </div>
+                </li>
+                
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            
+            <!-- Mobile Menu Toggle -->
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
     </nav>
-  </footer>
 
-  <script src="js/dropdown.js"></script>
-  <script src="js/hotspots.js"></script>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Your Homebuilding Handbook</h1>
+            <p>Your complete guide to residential construction and home renovation.</p>
+            <a href="#getting-started" class="btn">Get Started</a>
+            <a href="#table-of-contents" class="btn btn-outline">Table of Contents</a>
+        </div>
+    </header>
+
+    <!-- Hotspots Overlay -->
+    <div class="hotspots-overlay">
+        <div class="hotspot doors">
+            <a href="doors/index.html" class="label">Doors</a>
+        </div>
+        <div class="hotspot garage">
+            <a href="garage/index.html" class="label">Garage</a>
+        </div>
+        <div class="hotspot walls">
+            <a href="walls/index.html" class="label">Walls</a>
+        </div>
+        <div class="hotspot windows">
+            <a href="windows/index.html" class="label">Windows</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <section id="getting-started" class="section">
+            <div class="container">
+                <h2>Getting Started with Homebuilding</h2>
+                <p>Whether you're building your first home or renovating your current one, our comprehensive guides will walk you through every step of the process.</p>
+                
+                <div class="card-grid">
+                    <article class="card">
+                        <img src="images/planning.png" alt="Home Planning" loading="lazy">
+                        <h3>Planning & Design</h3>
+                        <p>Learn how to create functional, beautiful home plans that work for your lifestyle.</p>
+                    </article>
+                    
+                    <article class="card">
+                        <img src="images/foundation.png" alt="Foundation Work" loading="lazy">
+                        <h3>Fundraising & Permits</h3>
+                        <p>Discover the financial and regulatory aspects of home construction projects.</p>
+                    </article>
+                    
+                    <article class="card">
+                        <img src="images/construction.png" alt="Construction Process" loading="lazy">
+                        <h3>Building Techniques</h3>
+                        <p>Master essential construction skills for all major home renovation projects.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="table-of-contents" class="section">
+            <div class="container">
+                <h2>Table of Contents</h2>
+                
+                <div class="toc-grid">
+                    <div class="toc-column">
+                        <h3>Popular Topics</h3>
+                        <ul>
+                            <li><a href="kitchen/index.html">Kitchen Remodeling</a></li>
+                            <li><a href="bathroom/index.html">Bathroom Design</a></li>
+                            <li><a href="livingroom/index.html">Living Room Makeovers</a></li>
+                            <li><a href="bedroom/index.html">Bedroom Renovations</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="toc-column">
+                        <h3>Structural Guides</h3>
+                        <ul>
+                            <li><a href="foundation/index.html">Foundation Basics</a></li>
+                            <li><a href="walls/index.html">Wall Construction</a></li>
+                            <li><a href="ceilings/index.html">Ceiling Types</a></li>
+                            <li><a href="floors/index.html">Flooring Options</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="toc-column">
+                        <h3>Exterior Projects</h3>
+                        <ul>
+                            <li><a href="roof/index.html">Roof Repair & Replacement</a></li>
+                            <li><a href="garage/index.html">Garage Building</a></li>
+                            <li><a href="doors/index.html">Door Installation</a></li>
+                            <li><a href="windows/index.html">Window Replacement</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Your Homebuilding Handbook</h3>
+                <p>Your trusted resource for all things home construction and renovation.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="resources.html">Resources Library</a></li>
+                    <li><a href="projects.html">Success Stories</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Connect With Us</h4>
+                <p>Stay updated with the latest homebuilding tips and tutorials.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; <?php echo date("Y"); ?> Your Homebuilding Handbook. All rights reserved.</p>
+            <a href="contact.html">Contact Us</a>
+            <a href="#privacy-policy">Privacy Policy</a>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js" defer></script>
 </body>
 </html>
