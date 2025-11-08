@@ -1,101 +1,585 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Your Homebuilding Handbook</title>
-  <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Homebuilding Handbook</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Extend your existing styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: #f5f5f5;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo img {
+            height: 50px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo img:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-list a {
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-list a::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(135deg, #fff 50%, transparent 50%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-list a:hover::before {
+            width: 100%;
+        }
+
+        .nav-list a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 100, 0.2);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0, 0, 100, 0.3);
+            border-radius: 10px;
+            padding: 10px 0;
+            margin-top: 5px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            margin-top: 2px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            padding: 100px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 100, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            margin-bottom: 20px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ff6b6b 0%, #f093fb 100%);
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: all 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #1e3c72;
+            padding: 1rem 2.5rem;
+            border: 2px solid white;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(30, 60, 114, 0.95);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.2);
+        }
+
+        .sections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 50px 20px;
+            background: white;
+        }
+
+        .section-card {
+            background: linear-gradient(135deg, #fff 0%, #e6f7ff 100%);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 100, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #ff6b6b 0%, #f093fb 100%);
+        }
+
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 100, 0.15);
+        }
+
+        .section-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #ff6b6b;
+        }
+
+        .section-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #1e3c72;
+        }
+
+        .section-card p {
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .featured-plan {
+            background: #fff;
+            padding: 60px 20px;
+        }
+
+        .plan-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .plan-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 100, 0.2);
+        }
+
+        .hotspots {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .hotspot {
+            position: absolute;
+            cursor: pointer;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 100, 0.3);
+            border: 2px solid #ff6b6b;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+            transform: scale(0);
+            opacity: 0;
+        }
+
+        .hotspot.active {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .hotspot:hover {
+            background: rgba(255, 245, 245, 0.98);
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+        }
+
+        .hotspot span {
+            background: linear-gradient(135deg, #ff6b6b 0%, #f093fb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            padding: 0 10px;
+        }
+
+        .tips-section {
+            background: #e6f7ff;
+            padding: 50px 20px;
+            color: #1e3c72;
+        }
+
+        .tip-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 100, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .tip-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tip-icon {
+            font-size: 2rem;
+            color: #ff6b6b;
+            margin-bottom: 15px;
+        }
+
+        .testimonial {
+            background: linear-gradient(135deg, #fff 0%, #e6f7ff 100%);
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: #1e3c72;
+            quotes: "⌈" "⌉" "⌊" "⌋";
+        }
+
+        .testimonial-text::before {
+            content: open-quote;
+            font-size: 2rem;
+            color: #ff6b6b;
+            margin-right: 5px;
+        }
+
+        .testimonial-text::after {
+            content: close-quote;
+            font-size: 2rem;
+            color: #ff6b6b;
+            margin-left: 5px;
+        }
+
+        .faq-section {
+            background: white;
+            padding: 50px 20px;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(135deg, #fff 0%, #fafcfe 100%);
+            margin-bottom: 10px;
+            cursor: pointer;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f7ff 100%);
+        }
+
+        .faq-question-icon {
+            font-size: 1.5rem;
+            color: #ff6b6b;
+            padding: 5px;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0;
+        }
+
+        .faq-answer.active {
+            max-height: 500px;
+            padding: 15px 20px;
+            background: #f9fafc;
+        }
+
+        .faq-answer p {
+            margin-top: 0;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .sections-grid {
+                gap: 20px;
+            }
+
+            .section-card h3 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-<nav class="navbar">
-  <div class="nav-container">
-    <a href="index.html" class="logo">
-      <img src="images/YHBH Logo2.png" alt="Your Homebuilding Handbook Logo">
-    </a>
-    
-    <ul class="nav-list">
-      <li><a href="index.html">Home</a></li>
-      <li class="dropdown">
+    <header>
+        <nav>
+            <div class="nav-container">
+                <a href="#home" class="logo">
+                    <img src="images/YHBH Logo2.png" alt="Your Homebuilding Handbook Logo">
+                </a>
+                
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li class="dropdown">
+                        <a href="#guides">Guides</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="bathroom/index.html">Bathroom Renovations</a></li>
+                            <li><a href="kitchen/index.html">Kitchen Makeovers</a></li>
+                            <li><a href="livingroom/index.html">Living Room Designs</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Welcome to Your Homebuilding Handbook</h1>
+                <p>Your complete guide to building and renovating your dream home.</p>
+                <a href="#guides" class="btn">Get Started</a>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="about-content">
+                <h2>About Us</h2>
+                <p>We're a team of experienced builders, designers, and home enthusiasts dedicated to helping you create beautiful, functional homes.</p>
+            </div>
+        </section>
+
+        <section id="guides" class="guides">
+            <h2>Popular Building Guides</h2>
+            <div class="guides-grid">
+                <article class="guide-card">
+                    <img src="images/bathroom-guide.jpg" alt="Bathroom Renovation Guide">
+                    <h3>Bathroom Remodeling Tips</h3>
+                    <p>Learn how to create a stunning bathroom on any budget.</p>
+                </article>
+                
+                <article class="guide-card">
+                    <img src="images/kitchen-guide.jpg" alt="Kitchen Makeover Guide">
+                    <h3>Kitchen Makeovers Made Easy</h3>
+                    <p>Transform your kitchen with our step-by-step renovation guide.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="building-tips">
+            <h2>Essential Homebuilding Tips</h2>
+            <div class="tips-grid">
+                <div class="tip-item">
+                    <span class="tip-number">1</span>
+                    <h3>Always Get Permits</h3>
+                    <p>Before starting any major construction project, check with your local building department to obtain the necessary permits.</p>
+                </div>
+                
+                <div class="tip-item">
+                    <span class="tip-number">2</span>
+                    <h3>Hire Qualified Professionals</h3>
+                    <p>When working on complex aspects like electrical, plumbing, or structural work, always hire licensed and insured contractors.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-plan">
+            <h2>Featured Home Plan</h2>
+            <div class="hotspots" id="hotspots">
+                <img src="images/sample-home-plan.png" alt="Sample home floor plan" class="plan-image">
+                
+                <!-- Hotspots -->
+                <div class="hotspot doors" data-section="doors">
+                    <span>Doors</span>
+                </div>
+                <div class="hotspot garage" data-section="garage">
+                    <span>Garage</span>
+                </div>
+                <div class="hotspot kitchen" data-section="kitchen">
+                    <span>Kitchen</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <h2>What Our Readers Say</h2>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"This handbook transformed how I approach home projects. The step-by-step guides made my first renovation a success!"</p>
+                <p>- Sarah M., First-Time Homeowner</p>
+            </div>
+        </section>
+
+        <section class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>How long does a typical renovation take?</span>
+                        <span class="faq-question-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Renovation timelines vary depending on the scope of work, but most medium projects take 4-12 weeks. Simple updates can be completed in days.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Should I do DIY or hire professionals?</span>
+                        <span class="faq-question-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Simple tasks like painting or installing shelves are great for beginners. Complex work like electrical, plumbing, or structural changes should be left to licensed professionals.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <a href="#home" class="logo">Your Homebuilding Handbook</a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#guides">Guides</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2025 Your Homebuilding Handbook. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Hotspot interaction
+        const hotspots = document.querySelectorAll('.hotspot');
+        const hotspotLabels = document.querySelectorAll('.label');
         
-        <a href="#">Building Sections</a>
-        <ul class="dropdown-menu">
-        <li><a href="bathroom/index.html">Bathroom</a></li>
-        <li><a href="bedroom/index.html">Bedroom</a></li>
-        <li><a href="ceilings/index.html">Ceilings</a></li> 
-        <li><a href="doors/index.html">Doors</a></li>
-        <li><a href="floors/index.html">Floors</a></li>
-        <li><a href="foundation/index.html">Foundation</a></li>
-        <li><a href="garage/index.html">Garage</a></li>
-        <li><a href="kitchen/index.html">Kitchen</a></li>
-        <li><a href="livingroom/index.html">Living Room</a></li>
-        <li><a href="roof/index.html">Roof</a></li>
-        <li><a href="walls/index.html">Walls</a></li>
-        <li><a href="windows/index.html">Windows</a></li>
-      </ul>
-    </li>
+        hotspots.forEach(hotspot => {
+            hotspot.addEventListener('click', (e) => {
+                e.preventDefault();
+                const sectionId = hotspot.dataset.section;
+                
+                // Smooth scroll to the corresponding section
+                const section = document.querySelector(`[id="${sectionId}"]`);
+                if (section) {
+                    section.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Highlight active hotspot
+                    hotspots.forEach(h => h.classList.remove('active'));
+                    hotspot.classList.add('active');
+                }
+            });
+        });
 
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
- </div>
-</nav>
+        // FAQ toggle function
+        function toggleFAQ(question) {
+            const answer = question.nextElementSibling;
+            hotspots.forEach(hotspot => {
+                hotspot.classList.remove('active');
+            });
+            
+            if (answer.style.maxHeight) {
+                answer.style.maxHeight = null;
+                question.querySelector('.faq-question-icon').innerHTML = '+';
+            } else {
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                question.querySelector('.faq-question-icon').innerHTML = '-';
+            }
+        }
 
-  <div class="container">
-    <img src="images/17395-2.png" alt="Isometric House" class="background">
-
-    <!-- Hotspot Buttons -->
-    <div class="hotspot kitchen">
-      <a href="kitchen/index.html" class="label">Kitchen</a>
-    </div>
-
-    <div class="hotspot bedroom">
-      <a href="bedroom/index.html" class="label">Bedroom</a>
-    </div>
-
-    <div class="hotspot livingroom">
-      <a href="livingroom/index.html" class="label">Living Room</a>
-    </div>
-
-    <div class="hotspot foundation">
-      <a href="foundation/index.html" class="label">Foundation</a>
-    </div>
-
-    <div class="hotspot floors">
-      <a href="floors/index.html" class="label">Floors</a>
-    </div>
-
-    <div class="hotspot roof">
-      <a href="roof/index.html" class="label">Roof</a>
-    </div>
-
-    <div class="hotspot ceilings">
-      <a href="ceilings/index.html" class="label">Ceilings</a>
-    </div>
-    
-    <div class="hotspot bathroom">
-      <a href="bathroom/index.html" class="label">Bathroom</a>
-    </div>
-
-    <div class="hotspot doors">
-      <a href="doors/index.html" class="label">Doors</a>
-    </div>
-
-    <div class="hotspot garage">
-      <a href="garage/index.html" class="label">Garage</a>
-    </div>
-
-    <div class="hotspot walls">
-      <a href="walls/index.html" class="label">Walls</a>
-    </div>
-
-    <div class="hotspot windows">
-      <a href="windows/index.html" class="label">Windows</a>
-    </div>
-    
-  </div>
-  
-  <footer>
-  <p>&copy; 2025 Your Homebuilding Handbook. All rights reserved. | <a href="contact.html">Contact Us</a></p>
-</footer>
-
+        // Mobile menu toggle
+        function toggleMenu() {
+            document.querySelector('nav ul').classList.toggle('show');
+        }
+    </script>
 </body>
 </html>
