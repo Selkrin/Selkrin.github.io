@@ -1,135 +1,208 @@
-<!-- index.html - Complete homepage -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Homebuilding Handbook</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="animation.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    
+    <!-- SEO Metadata -->
+    <meta name="description" content="Comprehensive home construction guide with topics on bathrooms, kitchens, foundations, and more">
+    <meta name="keywords" content="home building, renovation, DIY construction, house remodeling, building codes">
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#home" class="logo">
-                <img src="images/YHBH Logo2.png" alt="Your Homebuilding Handbook Logo">
+<body class="animate-fade-in">
+    <!-- Header/Navigation -->
+    <header class="navbar animate-slide-down">
+        <nav class="nav-container">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <img src="images/YHBH Logo2.png" alt="Your Homebuilding Handbook Logo" loading="eager" width="150" height="50">
             </a>
             
-            <ul class="nav-list">
-                <li><a href="#home">Home</a></li>
+            <!-- Mobile Menu Toggle -->
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            
+            <!-- Navigation List -->
+            <ul class="nav-list animate-fade-in-right">
+                <li><a href="index.html">Home</a></li>
                 <li class="dropdown">
-                    <a href="#building-sections">Building Sections</a>
+                    <a href="#sections">Guides</a>
                     <ul class="dropdown-menu">
-                        <li><a href="bathroom/index.html">Bathroom</a></li>
-                        <li><a href="bedroom/index.html">Bedroom</a></li>
-                        <li><a href="ceilings/index.html">Ceilings</a></li>
-                        <li><a href="doors/index.html">Doors</a></li>
-                        <li><a href="floors/index.html">Floors</a></li>
-                        <li><a href="foundation/index.html">Foundation</a></li>
-                        <li><a href="garage/index.html">Garage</a></li>
-                        <li><a href="kitchen/index.html">Kitchen</a></li>
-                        <li><a href="livingroom/index.html">Living Room</a></li>
-                        <li><a href="roof/index.html">Roof</a></li>
-                        <li><a href="walls/index.html">Walls</a></li>
-                        <li><a href="windows/index.html">Windows</a></li>
+                        <li><a href="sections/bathroom/index.html">Bathrooms</a></li>
+                        <li><a href="sections/kitchen/index.html">Kitchens</a></li>
+                        <li><a href="sections/flooring/index.html">Flooring</a></li>
+                        <li><a href="sections/foundation/index.html">Foundations</a></li>
                     </ul>
                 </li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-            
-            <!-- Mobile menu toggle -->
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <h1>Welcome to Your Homebuilding Handbook</h1>
-            <p>Your complete guide to residential construction and home renovation</p>
-            <a href="#building-sections" class="btn">Get Started</a>
-            <a href="about.html" class="btn btn-outline">Learn More</a>
+    <section class="hero">
+        <div class="hero-content">
+            <h1> Your Homebuilding Handbook </h1>
+            <p>Your complete guide to home construction, renovation, and DIY projects</p>
+            <a href="#sections" class="btn">Browse Topics →</a>
         </div>
     </section>
 
-    <!-- Featured Sections -->
-    <section class="featured">
-        <div class="container">
-            <h2>Popular Building Topics</h2>
+    <!-- Main Content -->
+    <main>
+        <!-- Featured Sections Grid -->
+        <section id="sections" class="building-sections animate-fade-in">
+            <h2>Popular Construction Topics</h2>
             
-            <div class="feature-grid">
-                <a href="kitchen/index.html" class="feature-card">
-                    <h3>Kitchen Remodeling</h3>
-                    <p>Create your dream kitchen with expert guidance</p>
-                </a>
+            <div class="sections-grid">
+                <!-- Bathroom Section -->
+                <article class="section-card" onclick="location.href='sections/bathroom/index.html'">
+                    <h3>Bathroom Construction</h3>
+                    <p>Comprehensive guide to bathroom design, plumbing, and renovation.</p>
+                    <span class="card-icon">🚽</span>
+                    <a href="sections/bathroom/index.html">Read More →</a>
+                </article>
                 
-                <a href="bathroom/index.html" class="feature-card">
-                    <h3>Bathroom Design</h3>
-                    <p>Transform your bathroom into a spa-like retreat</p>
-                </a>
+                <!-- Kitchen Section -->
+                <article class="section-card" onclick="location.href='sections/kitchen/index.html'">
+                    <h3>Kitchen Renovation</h3>
+                    <p>Learn modern kitchen design, cabinetry, and appliance installation.</p>
+                    <span class="card-icon">🍳</span>
+                    <a href="sections/kitchen/index.html">Read More →</a>
+                </article>
                 
-                <a href="roof/index.html" class="feature-card">
-                    <h3>Roof Installation</h3>
-                    <p>Protect your home with proper roofing techniques</p>
-                </a>
-                
-                <a href="foundation/index.html" "class="feature-card">
+                <!-- Flooring Section -->
+                <article class="section-card" onclick="location.href='sections/floors/index.html'">
                     <h3>Flooring Solutions</h3>
-                    <p>Choose the perfect flooring for every room</p>
+                    <p>Explore wood, tile, laminate, and waterproof flooring options.</p>
+                    <span class="card-icon">📏</span>
+                    <a href="sections/floors/index.html">Read More →</a>
+                </article>
+                
+                <!-- Foundation Section -->
+                <article class="section-card" onclick="location.href='sections/foundation/index.html'">
+                    <h3>Foundation Basics</h3>
+                    <p>Everything you need to know about residential foundations.</p>
+                    <span class="card-icon">🏗️</span>
+                    <a href="sections/foundation/index.html">Read More →</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Project Type Filters -->
+        <section class="project-types animate-fade-in">
+            <h2>Browse by Project Type</h2>
+            
+            <div class="filters">
+                <button class="filter-btn active" data-filter="new-build">New Construction 🏗️</button>
+                <button class="filter-btn" data-filter="remodel">Remodeling ♻️</button>
+            </div>
+            
+            <div class="projects-grid" id="projectsGrid">
+                <!-- New Build Projects -->
+                <div class="project-card new-build" data-type="new-build">
+                    <h3>Foundation Design</h3>
+                    <p>Choosing the right foundation for your new home.</p>
+                </div>
+                
+                <div class="project-card new-build" data-type="new-build">
+                    <h3>Electrical Wiring</h3>
+                    <p>Proper electrical planning for new constructions.</p>
+                </div>
+                
+                <div class="project-card remodel" data-type="remodel">
+                    <h3>Bathroom Remodel</h3>
+                    <p>Renovating existing bathrooms efficiently.</p>
+                </div>
+                
+                <div class="project-card remodel" data-type="remodel">
+                    <h3>Kitchen Update</h3>
+                    <p>Modernizing your current kitchen space.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Topics -->
+        <section class="popular-topics animate-fade-in">
+            <h2>Most Searched Topics</h2>
+            <div class="topics-list">
+                <a href="#bathroom-guides">Bathroom Accessibility Standards</a>
+                <a href="#budgeting">Construction Budgeting Tips</a>
+                <a href="#building-codes">Local Building Codes Lookup</a>
+                <a href="#plumbing">Plumbing Code Requirements</a>
+                <a href="#ventilation">Proper Bathroom Ventilation</a>
+            </div>
+        </section>
+
+        <!-- Building Code Highlights -->
+        <section class="code-highlights animate-fade-in">
+            <h2>Key Building Code Essentials</h2>
+            <div class="code-cards">
+                <div class="code-card">
+                    <h4>IPC-2021</h4>
+                    <p><strong>International Plumbing Code</strong> - Bathroom requirements, drainage, fixtures</p>
+                </div>
+                
+                <div class="code-card">
+                    <h4>IRC-2023</h4>
+                    <p><strong>International Residential Code</strong> - Structural, electrical, and energy standards</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Features -->
+        <section class="interactive-sections animate-fade-in">
+            <h2>Interactive Tools</h2>
+            
+            <div class="interactive-items">
+                <a href="#floor-plan" class="interactive-item">
+                    <span>House Blueprint Tour 🏠</span>
+                    <img src="images/floor-plan-mini.png" alt="Floor plan preview">
+                </a>
+                
+                <a href="#code-calculator" class="interactive-item">
+                    <span>Budget Estimator 💰</span>
+                    <img src="images/calculation-icon.png" alt="Calculator icon">
                 </a>
             </div>
-        </div>
-    </section>
-
-    <!-- Getting Started Section -->
-    <section class="getting-started">
-        <div class="container">
-            <h2>Getting Started with Homebuilding</h2>
-            <p>Follow these simple steps to successfully complete your home project:</p>
-            
-            <div class="steps">
-                <div class="step">
-                    <span class="step-number">1</span>
-                    <h4>Plan Your Project</h4>
-                    <p>Create a detailed blueprint and obtain necessary permits</p>
-                </div>
-                
-                <div class="step">
-                    <span class="step-number">2</span>
-                    <h4>Select Materials</h4>
-                    <p>Choose high-quality building materials that suit your needs</p>
-                </div>
-                
-                <div class="step">
-                    <span class="step-number">3</span>
-                    <h4>Hire Professionals</h4>
-                    <p>Work with licensed contractors and skilled craftsmen</p>
-                </div>
-                
-                <div class="step">
-                    <span class="step-number">4</span>
-                    <h4>Complete & Inspect</h4>
-                    <p>Finish your project and ensure quality craftsmanship</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Your Homebuilding Handbook. All rights reserved.</p>
-            <p><a href="privacy-policy.html">Privacy Policy</a> | 
-               <a href="terms-of-service.html">Terms of Service</a> |
-               <a href="contact.html">Contact Us</a></p>
+    <footer class="site-footer animate-fade-in">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Your Homebuilding Handbook</h3>
+                <p>Your trusted resource for home construction, renovation, and DIY projects.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sections/">Building Guides</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Topics</h4>
+                <ul>
+                    <li><a href="sections/bathroom/index.html">Bathroom Construction</a></li>
+                    <li><a href="sections/kitchen/index.html">Kitchen Renovation</a></li>
+                    <li><a href="sections/flooring/index.html">Flooring Types</a></li>
+                    <li><a href="sections/foundation/index.html">Foundation Basics</a></li>
+                </ul>
+            </div>
         </div>
+        
+        <p class="copyright">&copy; <?php echo date("Y"); ?> Your Homebuilding Handbook. All rights reserved.</p>
     </footer>
-
-    <script src="scripts.js"></script>
 </body>
 </html>
