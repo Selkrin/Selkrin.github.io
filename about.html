@@ -1,53 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>About - Your Homebuilding Handbook</title>
-  <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Homebuilding Handbook</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .about-hero {
+            background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #2563eb 100%);
+            color: white;
+            padding: 80px 20px 60px;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .about-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .about-section {
+            margin-bottom: 60px;
+        }
+
+        .about-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+
+        .about-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .mission-vision {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
+        }
+
+        .mission-card, .vision-card {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .mission-card h3, .vision-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .mission-card p, .vision-card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .value-item {
+            background: var(--bg-alt);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .value-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .value-item h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--text);
+        }
+
+        .value-item p {
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        .team-section {
+            background: var(--bg-alt);
+            padding: 60px 20px;
+            margin: 60px 0;
+        }
+
+        .team-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #2563eb 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 16px;
+            margin: 60px auto;
+            max-width: 1200px;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .cta-button-white {
+            background: white;
+            color: var(--primary);
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .about-hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-hero p {
+                font-size: 1rem;
+            }
+
+            .about-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .cta-section h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
-<nav class="navbar">
-  <div class="nav-container">
-    <a href="index.html" class="logo">
-      <img src="images/YHBH Logo2.png" alt="Your Homebuilding Handbook Logo">
-    </a>
-    
-    <ul class="nav-list">
-      <li><a href="index.html">Home</a></li>
-      <li class="dropdown">
-        
-        <a href="#">Building Sections</a>
-        <ul class="dropdown-menu">
-        <li><a href="bathroom/index.html">Bathroom</a></li>
-        <li><a href="bedroom/index.html">Bedroom</a></li>
-        <li><a href="ceilings/index.html">Ceilings</a></li> 
-        <li><a href="doors/index.html">Doors</a></li>
-        <li><a href="floors/index.html">Floors</a></li>
-        <li><a href="foundation/index.html">Foundation</a></li>
-        <li><a href="garage/index.html">Garage</a></li>
-        <li><a href="kitchen/index.html">Kitchen</a></li>
-        <li><a href="livingroom/index.html">Living Room</a></li>
-        <li><a href="roof/index.html">Roof</a></li>
-        <li><a href="walls/index.html">Walls</a></li>
-        <li><a href="windows/index.html">Windows</a></li>
-      </ul>
-    </li>
+    <nav id="mainNav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/THBH Logo2.png" alt="Homebuilding Handbook Logo" class="logo-img">
+                Homebuilding Handbook
+            </div>
+            <button class="mobile-toggle" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#sections">Building Sections</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
- </div>
-</nav>
+    <section class="about-hero">
+        <h1>About Your Homebuilding Handbook</h1>
+        <p>Your trusted partner in turning homebuilding dreams into reality, one informed decision at a time.</p>
+    </section>
 
-  <div class="container" style="padding: 40px; text-align: center;">
-    <h1>About Us</h1>
-    <p>Welcome to Your Homebuilding Handbook! Our mission is to simplify the homebuilding process for homeowners, builders, and DIYers in North Carolina and beyond.</p>
-    <p>We're here to help homeowners and builders make smart, confident decisions throughout every phase of construction and remodeling.</p>
-    <p>Whether you're starting from dirt or refreshing your kitchen, we've got the resources and guides to help you succeed.</p>
-  </div>
+    <div class="about-content">
+        <div class="about-section">
+            <h2>Who We Are</h2>
+            <p>Welcome to Your Homebuilding Handbook, the comprehensive resource designed to guide you through every step of your home construction journey. Whether you're a first-time builder, a seasoned renovator, or a professional in the industry, we provide the knowledge and tools you need to build with confidence.</p>
+            <p>Our platform was created with a simple mission: to demystify the homebuilding process and make professional-grade construction knowledge accessible to everyone. We believe that an informed builder is a successful builder, and we're here to ensure you have the information you need at every stage of your project.</p>
+        </div>
 
-  <footer>
-    <p>&copy; 2025 Your Homebuilding Handbook. All rights reserved. | <a href="contact.html">Contact Us</a></p>
-  </footer>
+        <div class="mission-vision">
+            <div class="mission-card">
+                <h3>🎯 Our Mission</h3>
+                <p>To empower homebuilders with comprehensive, reliable, and easy-to-understand guidance that transforms complex construction processes into manageable, achievable projects.</p>
+            </div>
+            <div class="vision-card">
+                <h3>👁️ Our Vision</h3>
+                <p>To be the world's most trusted and comprehensive homebuilding resource, helping thousands of people successfully build their dream homes with confidence and competence.</p>
+            </div>
+        </div>
+
+        <div class="about-section">
+            <h2>What We Offer</h2>
+            <p>Your Homebuilding Handbook provides detailed, step-by-step guidance across all major aspects of home construction. From laying the foundation to installing the final fixtures, we cover it all with expert insights, practical tips, and industry best practices.</p>
+            <p>Our content is organized into easily navigable sections covering foundations, floors, walls, roofing, doors, windows, and specialized spaces like kitchens, bathrooms, bedrooms, living rooms, garages, and ceilings. Each section is packed with valuable information including:</p>
+            <ul style="margin-left: 20px; margin-top: 15px; line-height: 1.8; color: var(--text-light); font-size: 1.1rem;">
+                <li>Detailed planning and design considerations</li>
+                <li>Material selection and quality standards</li>
+                <li>Step-by-step installation guides</li>
+                <li>Building codes and regulations</li>
+                <li>Cost estimation and budgeting strategies</li>
+                <li>Expert tips and common pitfalls to avoid</li>
+                <li>Tool recommendations and safety guidelines</li>
+            </ul>
+        </div>
+
+        <div class="about-section">
+            <h2>Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-icon">🎓</div>
+                    <h4>Education First</h4>
+                    <p>We believe in empowering through knowledge and making complex concepts accessible to all.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">✅</div>
+                    <h4>Accuracy</h4>
+                    <p>We provide reliable, up-to-date information you can trust for your building projects.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🤝</div>
+                    <h4>Community</h4>
+                    <p>We're building a community of informed, confident homebuilders who support each other.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">💡</div>
+                    <h4>Innovation</h4>
+                    <p>We continuously update our content with the latest techniques and technologies.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-section">
+            <div class="team-content">
+                <h2 style="text-align: center; margin-bottom: 20px;">Our Commitment to You</h2>
+                <p style="text-align: center; font-size: 1.1rem; line-height: 1.8; color: var(--text-light); max-width: 800px; margin: 0 auto;">
+                    We understand that building a home is one of the most significant investments you'll ever make. That's why we're committed to providing you with the most comprehensive, accurate, and practical information available. Our team continuously researches, updates, and expands our content to ensure you have access to the latest building techniques, materials, and best practices.
+                </p>
+            </div>
+        </div>
+
+        <div class="about-section">
+            <h2>Why Choose Us?</h2>
+            <p><strong>Comprehensive Coverage:</strong> We don't just scratch the surface. Each section of our handbook dives deep into the details, giving you a thorough understanding of every aspect of home construction.</p>
+            <p><strong>Expert Insights:</strong> Our content is informed by industry professionals, experienced builders, and construction experts who know what works in real-world applications.</p>
+            <p><strong>Practical Approach:</strong> We focus on actionable information that you can actually use. No fluff, just practical guidance that helps you make informed decisions.</p>
+            <p><strong>User-Friendly Design:</strong> Our platform is designed to make finding information quick and easy. Whether you're on your phone at the job site or planning at home on your computer, our responsive design ensures you have access to the information you need, when you need it.</p>
+        </div>
+
+        <div class="cta-section">
+            <h2>Ready to Start Building?</h2>
+            <p>Explore our comprehensive building sections and start your homebuilding journey today.</p>
+            <a href="index.html#sections" class="cta-button-white">Explore Building Sections</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>Your trusted resource for homebuilding knowledge and guidance. We're here to help you build with confidence.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#sections">Building Sections</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Building Codes</a></li>
+                    <li><a href="#">Material Guides</a></li>
+                    <li><a href="#">Cost Calculator</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Have questions? We're here to help!</p>
+                <p>Email: info@homebuildinghandbook.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Homebuilding Handbook. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button id="scrollToTop" class="scroll-to-top" onclick="scrollToTop()">↑</button>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
