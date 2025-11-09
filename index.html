@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Your Homebuilding Handbook</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -31,103 +30,193 @@
             <!-- Navigation List -->
             <ul class="nav-list">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#new-house">New House Build</a></li>
-                <li><a href="#remodel">Remodeling</a></li>
-                <li><a href="#topics">Topics A-Z</a></li>
-                <li><a href="sections/">Guides & Tutorials</a></li>
+                
+                <!-- Dropdown Menu -->
+                <li class="dropdown">
+                    <a href="#sections" class="dropdown-toggle">Guides by Topic</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="sections/bathroom/index.html">Bathrooms</a></li>
+                        <li><a href="sections/kitchen/index.html">Kitchens</a></li>
+                        <li><a href="sections/livingroom/index.html">Living Spaces</a></li>
+                        <li><ode> <a href="sections/floors/index.html">Flooring</a></li>
+                        <li><a href="sections/ceilings/index.html">Ceilings</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Your Homebuilding Handbook</h1>
-                <p>Your complete guide to home construction, renovation, and DIY projects.</p>
-                <a href="#topics" class="btn">Browse Topics</a>
-            </div>
-        </section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Your Homebuilding Handbook</h1>
+            <p>Your trusted resource for home construction, renovation & DIY projects.</p>
+            <a href="#sections" class="btn">Browse Guides</a>
+        </div>
+    </section>
 
-        <!-- Sections Grid -->
-        <section id="topics" class="topics-section">
-            <h2>Bathroom Construction Topics</h2>
-            <div class="topics-grid">
-                <article class="topic-card">
-                    <h3>Accessibility</h3>
-                    <p>Create bathrooms that are functional for all abilities and age groups.</p>
-                    <a href="sections/bathroom/accessibility/index.html">Learn More →</a>
-                </article>
-                
-                <article class="topic-card">
-                    <h3>Budgeting</h3>
-                    <p>Plan and track your bathroom project expenses effectively.</p>
-                    <a href="sections/bathroom/budgeting/index.html">Learn More →</a>
-                </article>
-                
-                <article class="topic-card">
-                    <h3>DIY vs Professional</h3>
-                    <p>Decide what tasks to do yourself and when to hire experts.</p>
-                    <a href="sections/bathroom/diy-vs-pro/index.html">Learn More →</a>
-                </article>
-                
-                <article class="topic-card">
-                    <h3>Fixtures & Plumbing</h3>
-                    <p>Choose the right faucets, toilets, showers, and plumbing systems.</p>
-                    <a href="sections/bathroom/fixtures/index.html">Learn More →</a>
-                </article>
-            </div>
-        </section>
+    <!-- Featured Sections -->
+    <section id="featured-sections" class="building-sections">
+        <h2>Highest Demand Topics</h2>
+        
+        <div class="topics-grid">
+            <!-- Bathrooms Section -->
+            <article class="topic-card">
+                <h3>Bathrooms</h3>
+                <p>Comprehensive guide to bathroom construction, remodeling, and accessibility standards.</p>
+                <a href="sections/bathroom/index.html">Explore Bathroom Topics →</a>
+            </article>
+            
+            <!-- Kitchens Section -->
+            <article class="topic-card">
+                <h3>Kitchens</h3>
+                <p>Learn about kitchen design, cabinetry, countertops, and modern renovation techniques.</p>
+                <a href="sections/kitchen/index.html">Explore Kitchen Topics →</a>
+            </article>
+            
+            <!-- Flooring Section -->
+            <article class="topic-card">
+                <h3>Flooring Solutions</h3>
+                <p>Compare wood, tile, laminate, and other flooring materials with installation guides.</p>
+                <a href="sections/floors/index.html">Explore Flooring Topics →</a>
+            </article>
+        </div>
+    </section>
 
-        <!-- New House Section -->
-        <section id="new-house" class="building-sections">
-            <h2>New House Construction</h2>
-            <div class="sections-grid">
-                <article class="section-card">
-                    <h3>Foundation Basics</h3>
-                    <p>Create a strong foundation for your new home.</p>
-                    <a href="sections/foundation/index.html">Read More →</a>
-                </article>
-                
-                <article class="section-card">
-                    <h3>Framing Techniques</h3>
-                    <p>Learn proper wall, floor, and roof framing methods.</p>
-                    <a href="sections/framing/index.html">Read More →</a>
-                </article>
-                
-                <article class="section-card">
-                    <h3>Electrical Systems</h3>
-                    <p>Wire your home safely with up-to-date electrical codes.</p>
-                    <a href="sections/electrical/index.html">Read More →</a>
-                </article>
+    <!-- Topic Categories -->
+    <section class="topic-categories">
+        <h2>Browse by Construction Type</h2>
+        
+        <div class="categories-grid">
+            <!-- New Home Construction -->
+            <div class="category-card">
+                <h4>✅ NEW BUILD</h4>
+                <ul>
+                    <li>Foundation basics</li>
+                    <li>Framing techniques</li>
+                    <li>Permit requirements</li>
+                    <li>Energy efficiency</li>
+                    <li>Smart home integration</li>
+                </ul>
             </div>
-        </section>
+            
+            <!-- Remodeling Projects -->
+            <div class="category-card">
+                <h4>🔁 REMODEL</h4>
+                    <li>Demolition best practices</li>
+                    <li>Working around existing structures</li>
+                    <li>Updating electrical systems</li>
+                    <li>Preserving home value</li>
+                    <li>Mobility considerations</li>
+                </ul>
+            </div>
+            
+            <!-- Key Topics -->
+            <div class="category-card">
+                <h4>🛠️ CORE TOPICS</h4>
+                <ul>
+                    <li>Bathroom accessibility standards</li>
+                    <li>Plumbing codes and rough-ins</li>
+                    <li>Wall types and insulation</     <li>Doorway clearances</li>
+                    <li>Ventilation requirements</li>
+                    <li>Drywall techniques</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-        <!-- Remodeling Section -->
-        <section id="remodel" class="building-sections">
-            <h2>Home Renovation & Remodeling</h2>
-            <div class="sections-grid">
-                <article class="section-card">
-                    <h3>Kitchen Makeovers</h3>
-                    <p>Update your kitchen with modern designs and functionality.</p>
-                    <a href="sections/kitchen/index.html">Read More →</a>
-                </article>
-                
-                <article class="section-card">
-                    <h3>Bathroom Remodels</a>
-                    <p>Transform your bathroom space with fresh layouts and features.</p>
-                    <a href="sections/bathroom/remodel/index.html">Read More →</a>
-                </article>
-            </div>
-        </section>
-    </main>
+    <!-- Interactive Features -->
+    <section class="interactive-sections">
+        <div class="feature-grid">
+            <!-- Interactive Floor Plan -->
+            <article class="feature-card">
+                <h3>House Blueprint Explorer</h3>
+                <div class="floorplan-container">
+                    <img src="images/floor-plan.png" alt="Home floor plan" width="500" height="300" loading="lazy">
+                    
+                    <!-- Hotspots Overlay -->
+                    <div class="hotspot-overlay">
+                        <div class="hotspot doors-hotspot" data-target="doors">
+                            <span>Doors Area</span>
+                        </div>
+                        <div class="hotspot bathroom-hotspot" data-target="bathroom">
+                            <span>Bathroom Location</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Quick Reference Tables -->
+            <article class="feature-card">
+                <h3>Quick Reference Tables</h3>
+                <div class="tables-container">
+                    <div class="table-card">
+                        <h4>Minimum Clearances</h4>
+                        <table>
+                            <tr><th>Area</th><th>Clearance Required</th></tr>
+                            <tr><td>Bathroom turn space</td><td>60" diameter</td></tr>
+                            <tr><td>Kitchen work zones</td><td>21" side, 42" front</td></tr>
+                            <tr><td>Wheelchair turning</td><td>59" diameter min.</td></tr>
+                        </table>
+                    </div>
+                    
+                    <div class="table-card">
+                        <h4>Code Highlights</h3>
+                        <table>
+                            <tr><th>Topic</th><th Key Requirement</th></tr>
+                            <tr><td>Rough-in plumbing</td><td>Center of drain 15-20" from wall</td></tr>
+                            <tr><td>Bathroom height</td><td>34" min. for fixtures</td></tr>
+                            <tr><td>Ventilation CFM</td><td>50-100 CFM required</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Featured Resources -->
+    <section class="resources-section">
+        <h2>Featured Resources</h2>
+        <div class="resources-grid">
+            <a href="#codes" class="resource-card">
+                <img src="images/building-permit.png" alt="Building codes">
+                <h4>Local Building Codes</h4>
+                <p>State and municipal regulations for home construction.</p>
+            </a>
+            
+            <a href="#permits" class="resource-card">
+                <img src="images/permit.png" alt="Permit application">
+                <h4>Permit Applications</h4>
+                <p>Step-by-step guide to obtaining necessary permits.</p>
+            </a>
+            
+            <a href="#calculators" class="calculator-link">
+                <img src="images/calculator.png" alt="Cost calculator">
+                <h4>Budget Calculators</h4>
+                <p>Estimate project costs and timelines.</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Testimonials/Community -->
+    <section class="community-section">
+        <h2>From Our Community</h2>
+        <div class="testimonials">
+            <blockquote>"The bathroom accessibility guide saved me thousands in unnecessary work. Clear, practical information!"</blockquote>
+            <blockquote>"Excellent resource for both DIYers and professionals working on remodel projects."</blockquote>
+            <blockquote>"Made navigating building codes simple and stress-free - exactly what I needed for my first build."</blockquote>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-column">
                 <h3>Your Homebuilding Handbook</h3>
-                <p>Your trusted resource for home construction, renovation, and DIY projects.</p>
+                <p>Your trusted resource for home construction, renovation & DIY projects.</p>
             </div>
             
             <div class="footer-column">
@@ -137,6 +226,16 @@
                     <li><a href="sections/">Building Guides</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Sections</h4>
+                <ul>
+                    <li><a href="sections/bathroom/index.html">Bathrooms</a></li>
+                    <li><a href="sections/kitchen/index.html">Kitchens</a></li>
+                    <li><a href="sections/floors/index.html">Flooring</a></li>
+                    <li><a href="sections/ceilings/index.html">Ceilings</a></li>
                 </ul>
             </div>
         </div>
