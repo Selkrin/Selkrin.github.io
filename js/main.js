@@ -216,8 +216,8 @@ function openModal(sectionName) {
     
     title.textContent = section.name;
     body.innerHTML = `
-        <div style="text-align: center; margin-bottom: 20px;">
-            <img src="${section.icon}" alt="${section.name}" style="width: 120px; height: 120px; object-fit: contain;">
+        <div style="text-align: center; margin-bottom: 10px;">
+            <img src="${section.icon}" alt="${section.name}" style="width: 240px; height: 240px; object-fit: contain;">
         </div>
         <h3>Overview</h3>
         <p>${section.description}</p>
