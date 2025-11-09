@@ -125,7 +125,7 @@ function renderSections(filter = 'all') {
 
 // Navigate to section page
 function navigateToSection(link) {
-    // For demo purposes, open modal. In production, use: window.location.href = link;
+    window.location.href = link;
     const sectionName = link.split('/')[1];
     const section = sections.find(s => s.name.toLowerCase().replace(' ', '-') === sectionName);
     if (section) {
