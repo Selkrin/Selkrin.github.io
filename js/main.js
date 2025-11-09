@@ -2,84 +2,84 @@
 const sections = [
     {
         name: 'Foundation',
-        icon: '🏗️',
+        icon: 'images/icon-foundation.png',
         description: 'Essential foundation planning, excavation, and concrete work for a solid base',
         category: 'structural',
         link: 'sections/foundation/foundation.html'
     },
     {
         name: 'Floors',
-        icon: '📏',
+        icon: 'images/icon-floors.png',
         description: 'Flooring installation, subflooring, and finishing techniques',
         category: 'structural',
         link: 'sections/floors/floors.html'
     },
     {
         name: 'Walls',
-        icon: '🧱',
+        icon: 'images/icon-walls.png',
         description: 'Framing, insulation, drywall, and wall finishing methods',
         category: 'structural',
         link: 'sections/walls/walls.html'
     },
     {
         name: 'Roof',
-        icon: '🏠',
+        icon: 'images/icon-roof.png',
         description: 'Roofing materials, installation, and weatherproofing strategies',
         category: 'exterior',
         link: 'sections/roof/roof.html'
     },
     {
         name: 'Windows',
-        icon: '🪟',
+        icon: 'images/icon-windows.png',
         description: 'Window selection, installation, and energy efficiency considerations',
         category: 'exterior',
         link: 'sections/windows/windows.html'
     },
     {
         name: 'Doors',
-        icon: '🚪',
+        icon: 'images/icon-doors.png',
         description: 'Interior and exterior door installation and hardware',
         category: 'exterior',
         link: 'sections/doors/doors.html'
     },
     {
         name: 'Kitchen',
-        icon: '🍳',
+        icon: 'images/icon-kitchen.png',
         description: 'Kitchen layout, cabinetry, appliances, and plumbing fixtures',
         category: 'interior',
         link: 'sections/kitchen/kitchen.html'
     },
     {
         name: 'Bathroom',
-        icon: '🚿',
+        icon: 'images/icon-bathroom.png',
         description: 'Bathroom design, plumbing, fixtures, and tile work',
         category: 'interior',
         link: 'sections/bathroom/bathroom.html'
     },
     {
         name: 'Bedroom',
-        icon: '🛏️',
+        icon: 'images/icon-bedroom.png',
         description: 'Bedroom planning, closets, and finishing touches',
         category: 'interior',
         link: 'sections/bedroom/bedroom.html'
     },
     {
         name: 'Living Room',
-        icon: '🛋️',
+        icon: 'images/icon-living-room.png',
         description: 'Living space design, lighting, and electrical planning',
         category: 'interior',
         link: 'sections/living-room/living-room.html'
     },
     {
         name: 'Garage',
-        icon: '🚗',
+        icon: 'images/icon-garage.png',
         description: 'Garage construction, doors, and storage solutions',
         category: 'exterior',
         link: 'sections/garage/garage.html'
     },
     {
         name: 'Ceilings',
-        icon: '⬜',
+        icon: 'images/icon-ceilings.png',
         description: 'Ceiling installation, types, and finishing options',
         category: 'structural',
         link: 'sections/ceilings/ceilings.html'
@@ -111,7 +111,9 @@ function renderSections(filter = 'all') {
                  onclick="navigateToSection('${section.link}')" 
                  style="animation-delay: ${index * 0.1}s"
                  data-category="${section.category}">
-                <div class="section-icon">${section.icon}</div>
+                <div class="section-icon">
+                    <img src="${section.icon}" alt="${section.name}">
+                </div>
                 <div class="section-content">
                     <h3>${section.name}</h3>
                     <p>${section.description}</p>
@@ -125,7 +127,7 @@ function renderSections(filter = 'all') {
 
 // Navigate to section page
 function navigateToSection(link) {
-    window.location.href = link;
+    // For demo purposes, open modal. In production, use: window.location.href = link;
     const sectionName = link.split('/')[1];
     const section = sections.find(s => s.name.toLowerCase().replace(' ', '-') === sectionName);
     if (section) {
@@ -187,7 +189,8 @@ function handleSearchInput(event) {
     if (results.length > 0) {
         suggestions.innerHTML = results.map(s => `
             <div class="suggestion-item" onclick="selectSuggestion('${s.name}')">
-                ${s.icon} ${s.name} - ${s.description}
+                <img src="${s.icon}" alt="${s.name}" style="width: 24px; height: 24px; object-fit: contain; vertical-align: middle; margin-right: 10px;">
+                ${s.name} - ${s.description}
             </div>
         `).join('');
         suggestions.classList.add('active');
@@ -211,8 +214,11 @@ function openModal(sectionName) {
     const title = document.getElementById('modalTitle');
     const body = document.getElementById('modalBody');
     
-    title.textContent = section.icon + ' ' + section.name;
+    title.textContent = section.name;
     body.innerHTML = `
+        <div style="text-align: center; margin-bottom: 20px;">
+            <img src="${section.icon}" alt="${section.name}" style="width: 80px; height: 80px; object-fit: contain;">
+        </div>
         <h3>Overview</h3>
         <p>${section.description}</p>
         
@@ -229,7 +235,7 @@ function openModal(sectionName) {
         <h3 style="margin-top: 30px;">Getting Started</h3>
         <p>This section provides comprehensive guidance on all aspects of ${section.name.toLowerCase()} construction and installation. From initial planning to final finishing touches, you'll find expert advice and practical tips to ensure your project is completed successfully.</p>
         
-        <div style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; color: white;">
+        <div style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%); border-radius: 12px; color: white;">
             <strong style="font-size: 1.2rem;">💡 Pro Tip:</strong>
             <p style="margin-top: 10px;">Always consult with licensed professionals and ensure all work meets local building codes and regulations. Proper planning and preparation are key to a successful build.</p>
         </div>
