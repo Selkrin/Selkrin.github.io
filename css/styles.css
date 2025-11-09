@@ -438,7 +438,7 @@ nav.scrolled {
 }
 
 .section-card:hover .section-icon {
-    transform: scale(1.1);
+    transform: scale(1.25);
 }
 
 .section-card:nth-child(2n) .section-icon {
