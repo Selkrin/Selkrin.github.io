@@ -110,6 +110,14 @@ nav.scrolled {
     padding: 20px 0;
     cursor: pointer;
     transition: transform 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
 }
 
 .nav-logo:hover {
@@ -161,7 +169,7 @@ nav.scrolled {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #2563eb 100%);
     color: white;
     padding: 120px 20px 100px;
     text-align: center;
@@ -417,10 +425,17 @@ nav.scrolled {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 4rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
     position: relative;
     transition: transform 0.3s;
+    padding: 20px;
+}
+
+.section-icon img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
 }
 
 .section-card:hover .section-icon {
@@ -508,7 +523,7 @@ nav.scrolled {
 /* Stats Section */
 .stats-section {
     padding: 80px 20px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #2563eb 100%);
     color: white;
 }
 
@@ -612,7 +627,7 @@ footer {
 }
 
 .modal-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #2563eb 100%);
     color: white;
     padding: 30px;
     border-radius: 16px 16px 0 0;
