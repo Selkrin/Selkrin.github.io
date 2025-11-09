@@ -435,7 +435,6 @@ nav.scrolled {
     width: 80px;
     height: 80px;
     object-fit: contain;
-    filter: brightness(0) invert(1);
 }
 
 .section-card:hover .section-icon {
