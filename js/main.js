@@ -1,88 +1,88 @@
-// Building sections data with categories
+x// Building sections data with categories
 const sections = [
     {
         name: 'Foundation',
         icon: 'images/icon-foundation.png',
         description: 'Essential foundation planning, excavation, and concrete work for a solid base',
         category: 'structural',
-        link: 'sections/foundation/foundation.html'
+        link: 'sections/foundation/index.html'
     },
     {
         name: 'Floors',
         icon: 'images/icon-floors.png',
         description: 'Flooring installation, subflooring, and finishing techniques',
         category: 'structural',
-        link: 'sections/floors/floors.html'
+        link: 'sections/floors/index.html'
     },
     {
         name: 'Walls',
         icon: 'images/icon-walls.png',
         description: 'Framing, insulation, drywall, and wall finishing methods',
         category: 'structural',
-        link: 'sections/walls/walls.html'
+        link: 'sections/walls/index.html'
     },
     {
         name: 'Roof',
         icon: 'images/icon-roof.png',
         description: 'Roofing materials, installation, and weatherproofing strategies',
         category: 'exterior',
-        link: 'sections/roof/roof.html'
+        link: 'sections/roof/index.html'
     },
     {
         name: 'Windows',
         icon: 'images/icon-windows.png',
         description: 'Window selection, installation, and energy efficiency considerations',
         category: 'exterior',
-        link: 'sections/windows/windows.html'
+        link: 'sections/windows/index.html'
     },
     {
         name: 'Doors',
         icon: 'images/icon-doors.png',
         description: 'Interior and exterior door installation and hardware',
         category: 'exterior',
-        link: 'sections/doors/doors.html'
+        link: 'sections/doors/index.html'
     },
     {
         name: 'Kitchen',
         icon: 'images/icon-kitchen.png',
         description: 'Kitchen layout, cabinetry, appliances, and plumbing fixtures',
         category: 'interior',
-        link: 'sections/kitchen/kitchen.html'
+        link: 'sections/kitchen/index.html'
     },
     {
         name: 'Bathroom',
         icon: 'images/icon-bathroom.png',
         description: 'Bathroom design, plumbing, fixtures, and tile work',
         category: 'interior',
-        link: 'sections/bathroom/bathroom.html'
+        link: 'sections/bathroom/index.html'
     },
     {
         name: 'Bedroom',
         icon: 'images/icon-bedroom.png',
         description: 'Bedroom planning, closets, and finishing touches',
         category: 'interior',
-        link: 'sections/bedroom/bedroom.html'
+        link: 'sections/bedroom/index.html'
     },
     {
         name: 'Living Room',
         icon: 'images/icon-living-room.png',
         description: 'Living space design, lighting, and electrical planning',
         category: 'interior',
-        link: 'sections/living-room/living-room.html'
+        link: 'sections/living-room/index.html'
     },
     {
         name: 'Garage',
         icon: 'images/icon-garage.png',
         description: 'Garage construction, doors, and storage solutions',
         category: 'exterior',
-        link: 'sections/garage/garage.html'
+        link: 'sections/garage/index.html'
     },
     {
         name: 'Ceilings',
         icon: 'images/icon-ceilings.png',
         description: 'Ceiling installation, types, and finishing options',
         category: 'structural',
-        link: 'sections/ceilings/ceilings.html'
+        link: 'sections/ceilings/index.html'
     }
 ];
 
