@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Build Foundation - Your Homebuilding Handbook</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <style>
+        .section-hero {
+            background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #2563eb 100%);
+            color: white;
+            padding: 80px 20px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M10 10h80v80H10z" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/></svg>');
+            opacity: 0.3;
+        }
+
+        .section-hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .section-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        .breadcrumb {
+            max-width: 1200px;
+            margin: 30px auto 0;
+            padding: 0 20px;
+            font-size: 0.95rem;
+        }
+
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .breadcrumb a:hover {
+            opacity: 1;
+        }
+
+        .breadcrumb span {
+            margin: 0 10px;
+            opacity: 0.6;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .content-section {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: var(--text);
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 10px;
+        }
+
+        .content-section h3 {
+            font-size: 1.5rem;
+            margin: 30px 0 15px;
+            color: var(--text);
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .content-section ul, .content-section ol {
+            margin: 20px 0 20px 30px;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        .content-section li {
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+
+        .foundation-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .foundation-type-card {
+            background: var(--bg-alt);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .foundation-type-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .foundation-type-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+
+        .foundation-type-card .pros {
+            color: #10b981;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+
+        .foundation-type-card .cons {
+            color: #ef4444;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .process-steps {
+            counter-reset: step-counter;
+        }
+
+        .process-step {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: relative;
+            padding-left: 100px;
+        }
+
+        .process-step::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .process-step h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .info-box {
+            background: #dbeafe;
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .info-box h3 {
+            color: #1e40af;
+            margin: 0 0 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+        }
+
+        .info-box p {
+            color: #1e3a8a;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .warning-box {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .warning-box h3 {
+            color: #92400e;
+            margin: 0 0 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+        }
+
+        .warning-box p {
+            color: #78350f;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .cost-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .cost-table th {
+            background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .cost-table td {
+            padding: 15px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cost-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .cost-table tr:hover {
+            background: var(--bg-alt);
+        }
+
+        .checklist {
+            background: var(--bg-alt);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .checklist h3 {
+            margin-top: 0;
+            color: var(--text);
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: start;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .checklist-checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--primary);
+            border-radius: 4px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+            gap: 20px;
+        }
+
+        .nav-button {
+            flex: 1;
+            padding: 20px;
+            background: white;
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-weight: 600;
+        }
+
+        .nav-button:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .section-hero h1 {
+                font-size: 2rem;
+            }
+
+            .content-section {
+                padding: 25px;
+            }
+
+            .process-step {
+                padding-left: 30px;
+                padding-top: 70px;
+            }
+
+            .process-step::before {
+                left: 50%;
+                transform: translateX(-50%);
+                top: 15px;
+            }
+
+            .foundation-types {
+                grid-template-columns: 1fr;
+            }
+
+            .navigation-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav id="mainNav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="../../images/YHBH Logo2.png" alt="Homebuilding Handbook Logo" class="logo-img">
+                Homebuilding Handbook
+            </div>
+            <button class="mobile-toggle" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#sections">Building Sections</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="section-hero">
+        <div class="section-hero-content">
+            <h1>🏗️ New Build Foundation</h1>
+            <p>Complete guide to building a new foundation from the ground up. Learn about foundation types, site preparation, construction methods, and best practices.</p>
+        </div>
+        <div class="breadcrumb">
+            <a href="../../index.html">Home</a>
+            <span>›</span>
+            <a href="../../index.html#sections">Building Sections</a>
+            <span>›</span>
+            <a href="index.html">Foundation</a>
+            <span>›</span>
+            <span style="opacity: 1;">New Build</span>
+        </div>
+    </section>
+
+    <div class="content-container">
+        <div class="content-section">
+            <h2>Introduction to New Foundation Construction</h2>
+            <p>Building a new foundation is one of the most critical phases of home construction. The foundation must support the entire weight of the structure, resist soil pressures, prevent moisture infiltration, and last for decades. Getting it right from the start is essential for the long-term stability and value of your home.</p>
+            <p>This comprehensive guide walks you through every aspect of new foundation construction, from choosing the right foundation type to final inspections and curing.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Types of Foundations</h2>
+            <p>The type of foundation you choose depends on several factors including soil conditions, climate, budget, and intended use of the space. Here are the main foundation types:</p>
+            
+            <div class="foundation-types">
+                <div class="foundation-type-card">
+                    <h4>Slab-on-Grade</h4>
+                    <p>A single layer of concrete poured directly on the ground. Most common in warm climates with stable soil.</p>
+                    <p class="pros">✓ Pros: Cost-effective, fast construction, no crawl space maintenance</p>
+                    <p class="cons">✗ Cons: No basement, difficult to access plumbing, minimal insulation from ground</p>
+                </div>
+
+                <div class="foundation-type-card">
+                    <h4>Crawl Space</h4>
+                    <p>Elevated foundation creating a 1.5-4 foot space beneath the home. Common in moderate climates.</p>
+                    <p class="pros">✓ Pros: Access to utilities, better than slab in flood-prone areas, allows for air circulation</p>
+                    <p class="cons">✗ Cons: Requires ventilation, potential moisture issues, pest concerns</p>
+                </div>
+
+                <div class="foundation-type-card">
+                    <h4>Full Basement</h4>
+                    <p>8-foot deep foundation creating a full-height underground space. Popular in cold climates.</p>
+                    <p class="pros">✓ Pros: Additional living space, storage, utility room, below frost line</p>
+                    <p class="cons">✗ Cons: Most expensive, requires waterproofing, potential moisture issues</p>
+                </div>
+
+                <div class="foundation-type-card">
+                    <h4>Pier & Beam</h4>
+                    <p>Concrete piers support horizontal beams that carry the floor structure. Good for uneven terrain.</p>
+                    <p class="pros">✓ Pros: Works on slopes, easy utility access, good drainage</p>
+                    <p class="cons">✗ Cons: Requires more maintenance, exposed to pests, floor can feel bouncy</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h3>💡 Climate Considerations</h3>
+                <p>Your local climate plays a huge role in foundation selection. In cold climates, foundations must extend below the frost line (typically 3-4 feet) to prevent frost heave. In warm, humid climates, moisture control and proper drainage are critical. Always consult local building codes for specific requirements in your area.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>The Construction Process</h2>
+            <p>Building a new foundation involves multiple steps that must be completed in the correct order. Here's the complete process:</p>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <h3>Site Preparation & Survey</h3>
+                    <p>Clear the building site of vegetation, debris, and topsoil. A professional surveyor will mark the exact building location, elevation, and property lines. This ensures your foundation is positioned correctly and meets setback requirements.</p>
+                    <ul>
+                        <li>Clear and level the site</li>
+                        <li>Mark utilities (call 811 before digging)</li>
+                        <li>Establish elevation benchmarks</li>
+                        <li>Set up site access and staging areas</li>
+                    </ul>
+                </div>
+
+                <div class="process-step">
+                    <h3>Excavation</h3>
+                    <p>Heavy equipment removes soil to create the foundation hole. The excavation depth and width depend on your foundation type and local frost line requirements.</p>
+                    <ul>
+                        <li>Dig to required depth plus extra for footings</li>
+                        <li>Ensure proper width for foundation walls and drainage</li>
+                        <li>Grade bottom for proper drainage</li>
+                        <li>Remove and stockpile topsoil for later use</li>
+                    </ul>
+                </div>
+
+                <div class="process-step">
+                    <h3>Footings Installation</h3>
+                    <p>Footings are the widened base of the foundation that distributes the building's weight. They're typically twice as wide as the foundation wall and extend below the frost line.</p>
+                    <ul>
+                        <li>Install footing forms or dig trenches</li>
+                        <li>Add gravel base for drainage</li>
+                        <li>Install rebar for reinforcement</li>
+                        <li>Pour and level concrete</li>
+                        <li>Allow proper curing time (usually 7 days)</li>
+                    </ul>
+                </div>
+
+                <div class="process-step">
+                    <h3>Foundation Walls</h3>
+                    <p>Foundation walls rise from the footings to ground level (or higher for basements). They can be poured concrete, concrete block (CMU), or insulated concrete forms (ICF).</p>
+                    <ul>
+                        <li>Build forms or lay blocks</li>
+                        <li>Install rebar and anchor bolts</li>
+                        <li>Pour concrete (if using poured walls)</li>
+                        <li>Ensure walls are level and plumb</li>
+                        <li>Allow adequate curing time</li>
+                    </ul>
+                </div>
+
+                <div class="process-step">
+                    <h3>Waterproofing & Drainage</h3>
+                    <p>Critical step to prevent water infiltration. Apply waterproofing membrane to exterior walls and install drainage systems.</p>
+                    <ul>
+                        <li>Apply waterproofing coating or membrane</li>
+                        <li>Install perimeter drain tile</li>
+                        <li>Add gravel drainage layer</li>
+                        <li>Ensure proper grading away from foundation</li>
+                        <li>Install sump pump if needed</li>
+                    </ul>
+                </div>
+
+                <div class="process-step">
+                    <h3>Backfilling</h3>
+                    <p>Carefully refill the excavated area around the foundation walls. Proper backfilling prevents settlement and drainage issues.</p>
+                    <ul>
+                        <li>Use proper backfill material (not clay)</li>
+                        <li>Compact in layers (lifts) every 6-12 inches</li>
+                        <li>Grade away from foundation (6" drop in 10')</li>
+                        <li>Protect drainage systems during backfill</li>
+                    </ul>
+                </div>
+
+                <div class="process-step">
+                    <h3>Slab Pour (if applicable)</h3>
+                    <p>For slab-on-grade or basement floors, prepare and pour the concrete slab.</p>
+                    <ul>
+                        <li>Install gravel base (4-6 inches)</li>
+                        <li>Add vapor barrier (6-mil plastic)</li>
+                        <li>Install insulation (if required)</li>
+                        <li>Place rebar or wire mesh</li>
+                        <li>Pour, finish, and cure concrete</li>
+                    </ul>
+                </div>
+
+                <div class="process-step">
+                    <h3>Final Inspection</h3>
+                    <p>Before construction continues, the foundation must pass inspection by local building officials.</p>
+                    <ul>
+                        <li>Schedule inspection with building department</li>
+                        <li>Ensure all work meets code requirements</li>
+                        <li>Address any deficiencies found</li>
+                        <li>Obtain approval to proceed with framing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Materials & Specifications</h2>
+            
+            <h3>Concrete Specifications</h3>
+            <p>Foundation concrete must meet specific strength requirements. Most residential foundations use:</p>
+            <ul>
+                <li><strong>Footings:</strong> 3000 PSI minimum compressive strength</li>
+                <li><strong>Foundation Walls:</strong> 3000-4000 PSI depending on application</li>
+                <li><strong>Slabs:</strong> 3500-4000 PSI with air entrainment in cold climates</li>
+                <li><strong>Mix Design:</strong> Proper water-cement ratio, aggregate size, and admixtures</li>
+            </ul>
+
+            <h3>Reinforcement Requirements</h3>
+            <p>Steel reinforcement (rebar) adds tensile strength to concrete:</p>
+            <ul>
+                <li><strong>Footings:</strong> #4 or #5 rebar, typically 2 bars running lengthwise</li>
+                <li><strong>Walls:</strong> Vertical and horizontal rebar per engineering specifications</li>
+                <li><strong>Slabs:</strong> Wire mesh or fiber reinforcement, rebar in high-stress areas</li>
+                <li><strong>Spacing:</strong> Follow local codes (typically 12-24" on center)</li>
+            </ul>
+
+            <h3>Waterproofing Materials</h3>
+            <ul>
+                <li><strong>Below-Grade:</strong> Rubberized asphalt, bentonite clay, or sheet membranes</li>
+                <li><strong>Drainage:</strong> 4" perforated drain tile, filter fabric, washed stone</li>
+                <li><strong>Vapor Barriers:</strong> 6-mil polyethylene sheeting under slabs</li>
+                <li><strong>Sealants:</strong> Polyurethane or epoxy for joints and penetrations</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Cost Estimates</h2>
+            <p>Foundation costs vary widely based on type, size, soil conditions, and location. Here are national average costs per square foot:</p>
+
+            <table class="cost-table">
+                <thead>
+                    <tr>
+                        <th>Foundation Type</th>
+                        <th>Cost per Sq Ft</th>
+                        <th>1,500 SF Home Total</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Slab-on-Grade</td>
+                        <td>$4 - $8</td>
+                        <td>$6,000 - $12,000</td>
+                        <td>Least expensive, fastest option</td>
+                    </tr>
+                    <tr>
+                        <td>Crawl Space</td>
+                        <td>$7 - $14</td>
+                        <td>$10,500 - $21,000</td>
+                        <td>Moderate cost, good access</td>
+                    </tr>
+                    <tr>
+                        <td>Full Basement</td>
+                        <td>$18 - $30</td>
+                        <td>$27,000 - $45,000</td>
+                        <td>Most expensive, adds living space</td>
+                    </tr>
+                    <tr>
+                        <td>Pier & Beam</td>
+                        <td>$8 - $15</td>
+                        <td>$12,000 - $22,500</td>
+                        <td>Good for slopes, variable cost</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="warning-box">
+                <h3>⚠️ Cost Variables</h3>
+                <p>These are baseline estimates. Actual costs can increase significantly due to: poor soil conditions requiring special engineering, high water tables needing extensive drainage, steep slopes requiring retaining walls, remote locations with difficult access, or local labor rates. Always get multiple detailed bids from licensed contractors.</p>
+            </div>
+        </div>
+
+        <div class="checklist">
+            <h3>✓ Pre-Construction Checklist</h3>
+            <div class="checklist-item">
+                <div class="checklist-checkbox"></div>
+                <div>Obtain building permits and schedule required inspections</div>
+            </div>
+            <div class="checklist-item">
+                <div class="checklist-checkbox"></div>
+                <div>Complete soil testing and geotechnical report</div>
+            </div>
+            <div class="checklist-item">
+                <div class="checklist-checkbox"></div>
+                <div>Have foundation plans engineered and stamped by licensed engineer</div>
+            </div>
+            <div class="checklist-item">
+                <div class="checklist-checkbox"></div>
+                <div>Call 811 to mark underground utilities before excavation</div>
+            </div>
+            <div class="checklist-item">
+                <div class="checklist-checkbox"></div>
+                <div>Verify property boundaries and setback requirements</div>
+            </div>
+            <div class="checklist-item">
+                <div class="checklist-checkbox"></div>
+                <div>Arrange for water and power at construction site</div>
+            </div>
+            <div class="checklist-item">
+                <div class="checklist-checkbox"></div>
+                <div>Order materials and schedule concrete delivery</div>
+            </div>
+            <div class="checklist-item">
+                <div class="checklist-checkbox"></div>
+                <div>Confirm contractor licensing and insurance coverage</div>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>🎯 Pro Tips for Success</h3>
+            <p><strong>Timing Matters:</strong> Pour foundations in mild weather when possible. Extreme heat or cold requires special precautions and admixtures.</p>
+            <p><strong>Quality Over Speed:</strong> Rushing the curing process or skipping steps leads to problems later. Allow proper curing time between phases.</p>
+            <p><strong>Documentation:</strong> Take extensive photos at each stage, especially before backfilling. This documentation is invaluable for future repairs or modifications.</p>
+            <p><strong>Drainage is Critical:</strong> Most foundation problems stem from poor drainage. Invest in proper waterproofing and drainage systems from the start.</p>
+        </div>
+
+        <div class="navigation-buttons">
+            <a href="index.html" class="nav-button">
+                ← Back to Foundation Topics
+            </a>
+            <a href="remodel.html" class="nav-button">
+                Next: Remodel →
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>Your trusted resource for homebuilding knowledge and guidance. We're here to help you build with confidence.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../../index.html#sections">Building Sections</a></li>
+                    <li><a href="../../about.html">About</a></li>
+                    <li><a href="../../contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Foundation Topics</h4>
+                <ul>
+                    <li><a href="new-build.html">New Build</a></li>
+                    <li><a href="remodel.html">Remodel</a></li>
+                    <li><a href="layouts.html">Layouts</a></li>
+                    <li><a href="budgeting.html">Budgeting</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Have questions? We're here to help!</p>
+                <p>Email: info@homebuildinghandbook.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Homebuilding Handbook. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button id="scrollToTop" class="scroll-to-top" onclick="scrollToTop()">↑</button>
+
+    <script src="../../js/main.js"></script>
+</body>
+</html>
