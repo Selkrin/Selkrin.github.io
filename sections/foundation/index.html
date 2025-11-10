@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundation - Your Homebuilding Handbook</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <style>
+        .section-hero {
+            background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #2563eb 100%);
+            color: white;
+            padding: 80px 20px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M10 10h80v80H10z" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/></svg>');
+            opacity: 0.3;
+        }
+
+        .section-hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-icon-large {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+        }
+
+        .section-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .section-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        .breadcrumb {
+            max-width: 1200px;
+            margin: 30px auto 0;
+            padding: 0 20px;
+            font-size: 0.95rem;
+        }
+
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .breadcrumb a:hover {
+            opacity: 1;
+        }
+
+        .breadcrumb span {
+            margin: 0 10px;
+            opacity: 0.6;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .intro-section {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-bottom: 60px;
+        }
+
+        .intro-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+
+        .intro-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .topic-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        .topic-header {
+            background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .topic-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .topic-header h3 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .topic-content {
+            padding: 25px;
+        }
+
+        .topic-content p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .topic-link {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .topic-link:hover {
+            background: var(--primary-dark);
+            transform: translateX(5px);
+        }
+
+        .key-points {
+            background: var(--bg-alt);
+            padding: 40px;
+            border-radius: 16px;
+            margin-bottom: 60px;
+        }
+
+        .key-points h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--text);
+            text-align: center;
+        }
+
+        .points-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .point-item {
+            display: flex;
+            gap: 15px;
+            align-items: start;
+        }
+
+        .point-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .point-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .point-content p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .warning-box {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 40px 0;
+        }
+
+        .warning-box h3 {
+            color: #92400e;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .warning-box p {
+            color: #78350f;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .section-hero h1 {
+                font-size: 2rem;
+            }
+
+            .topics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav id="mainNav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="../../images/YHBH Logo2.png" alt="Homebuilding Handbook Logo" class="logo-img">
+                Homebuilding Handbook
+            </div>
+            <button class="mobile-toggle" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#sections">Building Sections</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="section-hero">
+        <div class="section-hero-content">
+            <img src="../../images/icon-foundation.png" alt="Foundation" class="section-icon-large">
+            <h1>Foundation</h1>
+            <p>Building a solid foundation is the most critical step in home construction. Learn everything you need to know about creating a strong, stable base for your dream home.</p>
+        </div>
+        <div class="breadcrumb">
+            <a href="../../index.html">Home</a>
+            <span>›</span>
+            <a href="../../index.html#sections">Building Sections</a>
+            <span>›</span>
+            <span style="opacity: 1;">Foundation</span>
+        </div>
+    </section>
+
+    <div class="content-container">
+        <div class="intro-section">
+            <h2>Understanding Foundation Basics</h2>
+            <p>The foundation is literally the base upon which your entire home rests. It transfers the weight of the structure to the ground and protects against moisture, soil movement, and other environmental factors. A well-built foundation ensures the longevity and stability of your home for decades to come.</p>
+            <p>Whether you're planning a new build, considering a remodel, or just want to understand your home's foundation better, this comprehensive guide covers everything from basic concepts to advanced techniques.</p>
+        </div>
+
+        <h2 style="font-size: 2.5rem; text-align: center; margin-bottom: 40px; color: var(--text);">Foundation Topics</h2>
+
+        <div class="topics-grid">
+            <div class="topic-card" onclick="window.location.href='new-build.html'">
+                <div class="topic-header">
+                    <div class="topic-icon">🏗️</div>
+                    <h3>New Build</h3>
+                </div>
+                <div class="topic-content">
+                    <p>Starting from scratch? Learn about foundation types, site preparation, excavation, and the complete process of building a new foundation.</p>
+                    <a href="new-build.html" class="topic-link">Explore New Build →</a>
+                </div>
+            </div>
+
+            <div class="topic-card" onclick="window.location.href='remodel.html'">
+                <div class="topic-header">
+                    <div class="topic-icon">🔨</div>
+                    <h3>Remodel</h3>
+                </div>
+                <div class="topic-content">
+                    <p>Working with an existing foundation? Discover repair techniques, reinforcement options, and when replacement is necessary.</p>
+                    <a href="remodel.html" class="topic-link">Explore Remodel →</a>
+                </div>
+            </div>
+
+            <div class="topic-card" onclick="window.location.href='layouts.html'">
+                <div class="topic-header">
+                    <div class="topic-icon">📐</div>
+                    <h3>Layouts</h3>
+                </div>
+                <div class="topic-content">
+                    <p>Explore different foundation layouts and configurations that work best for various home designs and lot conditions.</p>
+                    <a href="layouts.html" class="topic-link">Explore Layouts →</a>
+                </div>
+            </div>
+
+            <div class="topic-card" onclick="window.location.href='lighting.html'">
+                <div class="topic-header">
+                    <div class="topic-icon">💡</div>
+                    <h3>Lighting</h3>
+                </div>
+                <div class="topic-content">
+                    <p>Plan for basement and crawl space lighting, including natural light solutions and electrical considerations in foundation spaces.</p>
+                    <a href="lighting.html" class="topic-link">Explore Lighting →</a>
+                </div>
+            </div>
+
+            <div class="topic-card" onclick="window.location.href='flooring.html'">
+                <div class="topic-header">
+                    <div class="topic-icon">🏠</div>
+                    <h3>Flooring</h3>
+                </div>
+                <div class="topic-content">
+                    <p>Learn about flooring options for basement and slab foundations, including moisture barriers and proper installation techniques.</p>
+                    <a href="flooring.html" class="topic-link">Explore Flooring →</a>
+                </div>
+            </div>
+
+            <div class="topic-card" onclick="window.location.href='ventilation.html'">
+                <div class="topic-header">
+                    <div class="topic-icon">🌬️</div>
+                    <h3>Ventilation</h3>
+                </div>
+                <div class="topic-content">
+                    <p>Proper ventilation prevents moisture problems and maintains structural integrity. Explore ventilation strategies for all foundation types.</p>
+                    <a href="ventilation.html" class="topic-link">Explore Ventilation →</a>
+                </div>
+            </div>
+
+            <div class="topic-card" onclick="window.location.href='accessibility.html'">
+                <div class="topic-header">
+                    <div class="topic-icon">♿</div>
+                    <h3>Accessibility</h3>
+                </div>
+                <div class="topic-content">
+                    <p>Design foundations that accommodate accessibility features, including zero-step entries and barrier-free access solutions.</p>
+                    <a href="accessibility.html" class="topic-link">Explore Accessibility →</a>
+                </div>
+            </div>
+
+            <div class="topic-card" onclick="window.location.href='budgeting.html'">
+                <div class="topic-header">
+                    <div class="topic-icon">💰</div>
+                    <h3>Budgeting</h3>
+                </div>
+                <div class="topic-content">
+                    <p>Understand foundation costs, get accurate estimates, and learn where you can save money without compromising quality.</p>
+                    <a href="budgeting.html" class="topic-link">Explore Budgeting →</a>
+                </div>
+            </div>
+
+            <div class="topic-card" onclick="window.location.href='diy-vs-pro.html'">
+                <div class="topic-header">
+                    <div class="topic-icon">🤔</div>
+                    <h3>DIY vs Pro</h3>
+                </div>
+                <div class="topic-content">
+                    <p>Determine which foundation tasks you can tackle yourself and when to call in professional contractors for optimal results.</p>
+                    <a href="diy-vs-pro.html" class="topic-link">Explore DIY vs Pro →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="key-points">
+            <h2>Key Foundation Considerations</h2>
+            <div class="points-grid">
+                <div class="point-item">
+                    <div class="point-icon">1</div>
+                    <div class="point-content">
+                        <h4>Soil Analysis</h4>
+                        <p>Understanding your soil type is crucial for foundation design and preventing future problems.</p>
+                    </div>
+                </div>
+                <div class="point-item">
+                    <div class="point-icon">2</div>
+                    <div class="point-content">
+                        <h4>Drainage</h4>
+                        <p>Proper drainage protects your foundation from water damage and maintains structural integrity.</p>
+                    </div>
+                </div>
+                <div class="point-item">
+                    <div class="point-icon">3</div>
+                    <div class="point-content">
+                        <h4>Building Codes</h4>
+                        <p>Always comply with local building codes and obtain necessary permits before starting work.</p>
+                    </div>
+                </div>
+                <div class="point-item">
+                    <div class="point-icon">4</div>
+                    <div class="point-content">
+                        <h4>Climate Factors</h4>
+                        <p>Consider frost lines, seismic activity, and local climate when designing your foundation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h3>⚠️ Important Safety Notice</h3>
+            <p>Foundation work is highly technical and mistakes can be extremely costly. While this guide provides comprehensive information, always consult with licensed structural engineers and foundation contractors before beginning any foundation project. Proper permits and inspections are required in most jurisdictions.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>Your trusted resource for homebuilding knowledge and guidance. We're here to help you build with confidence.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../../index.html#sections">Building Sections</a></li>
+                    <li><a href="../../about.html">About</a></li>
+                    <li><a href="../../contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Foundation Topics</h4>
+                <ul>
+                    <li><a href="new-build.html">New Build</a></li>
+                    <li><a href="remodel.html">Remodel</a></li>
+                    <li><a href="layouts.html">Layouts</a></li>
+                    <li><a href="budgeting.html">Budgeting</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Have questions? We're here to help!</p>
+                <p>Email: info@homebuildinghandbook.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Homebuilding Handbook. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button id="scrollToTop" class="scroll-to-top" onclick="scrollToTop()">↑</button>
+
+    <script src="../../js/main.js"></script>
+</body>
+</html>
