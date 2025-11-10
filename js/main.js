@@ -1,4 +1,4 @@
-x// Building sections data with categories
+// Building sections data with categories
 const sections = [
     {
         name: 'Foundation',
