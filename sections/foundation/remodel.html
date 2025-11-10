@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundation Remodel & Repair - Your Homebuilding Handbook</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <style>
+        .section-hero {
+            background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #2563eb 100%);
+            color: white;
+            padding: 80px 20px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M10 10h80v80H10z" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/></svg>');
+            opacity: 0.3;
+        }
+
+        .section-hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .section-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        .breadcrumb {
+            max-width: 1200px;
+            margin: 30px auto 0;
+            padding: 0 20px;
+            font-size: 0.95rem;
+        }
+
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .breadcrumb a:hover {
+            opacity: 1;
+        }
+
+        .breadcrumb span {
+            margin: 0 10px;
+            opacity: 0.6;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .content-section {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: var(--text);
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 10px;
+        }
+
+        .content-section h3 {
+            font-size: 1.5rem;
+            margin: 30px 0 15px;
+            color: var(--text);
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .content-section ul, .content-section ol {
+            margin: 20px 0 20px 30px;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        .content-section li {
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .problem-card {
+            background: var(--bg-alt);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #ef4444;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .problem-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .problem-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .problem-icon {
+            font-size: 1.5rem;
+        }
+
+        .severity {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .severity-minor {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .severity-moderate {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .severity-major {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .solution-steps {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #10b981;
+        }
+
+        .solution-steps h4 {
+            color: #10b981;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .info-box {
+            background: #dbeafe;
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .info-box h3 {
+            color: #1e40af;
+            margin: 0 0 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+        }
+
+        .info-box p {
+            color: #1e3a8a;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .warning-box {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .warning-box h3 {
+            color: #92400e;
+            margin: 0 0 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+        }
+
+        .warning-box p {
+            color: #78350f;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .danger-box {
+            background: #fee2e2;
+            border-left: 4px solid #ef4444;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .danger-box h3 {
+            color: #991b1b;
+            margin: 0 0 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+        }
+
+        .danger-box p {
+            color: #7f1d1d;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tr:hover {
+            background: var(--bg-alt);
+        }
+
+        .decision-tree {
+            background: var(--bg-alt);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .decision-box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .decision-box h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .inspection-checklist {
+            background: var(--bg-alt);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .inspection-checklist h3 {
+            margin-top: 0;
+            color: var(--text);
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: start;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .checklist-checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--primary);
+            border-radius: 4px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+            gap: 20px;
+        }
+
+        .nav-button {
+            flex: 1;
+            padding: 20px;
+            background: white;
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-weight: 600;
+        }
+
+        .nav-button:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .section-hero h1 {
+                font-size: 2rem;
+            }
+
+            .content-section {
+                padding: 25px;
+            }
+
+            .problem-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .navigation-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav id="mainNav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="../../images/YHBH Logo2.png" alt="Homebuilding Handbook Logo" class="logo-img">
+                Homebuilding Handbook
+            </div>
+            <button class="mobile-toggle" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#sections">Building Sections</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="section-hero">
+        <div class="section-hero-content">
+            <h1>🔨 Foundation Remodel & Repair</h1>
+            <p>Expert guidance on repairing, reinforcing, and upgrading existing foundations. Learn to identify problems, choose the right solutions, and make informed decisions.</p>
+        </div>
+        <div class="breadcrumb">
+            <a href="../../index.html">Home</a>
+            <span>›</span>
+            <a href="../../index.html#sections">Building Sections</a>
+            <span>›</span>
+            <a href="index.html">Foundation</a>
+            <span>›</span>
+            <span style="opacity: 1;">Remodel</span>
+        </div>
+    </section>
+
+    <div class="content-container">
+        <div class="content-section">
+            <h2>Introduction to Foundation Repair</h2>
+            <p>Foundation problems don't always require complete replacement. Many issues can be addressed with targeted repairs or reinforcement. The key is accurately diagnosing the problem, understanding its cause, and implementing the appropriate solution before minor issues become major structural problems.</p>
+            <p>This guide covers common foundation problems, repair methods, when to call professionals, and how to make cost-effective decisions about your foundation's future.</p>
+
+            <div class="warning-box">
+                <h3>⚠️ Safety First</h3>
+                <p>Foundation issues can indicate serious structural problems. While some minor repairs are DIY-friendly, major foundation work requires professional structural engineers and licensed contractors. Never ignore foundation problems—they only get worse with time.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Common Foundation Problems</h2>
+            <p>Recognizing foundation issues early can save thousands of dollars. Here are the most common problems homeowners face:</p>
+            
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h4><span class="problem-icon">🔍</span> Cracks in Walls</h4>
+                    <p>Hairline cracks are often cosmetic, but wide or growing cracks indicate settlement or structural movement. Horizontal cracks are more serious than vertical ones.</p>
+                    <span class="severity severity-moderate">Severity: Minor to Major</span>
+                </div>
+
+                <div class="problem-card">
+                    <h4><span class="problem-icon">💧</span> Water Infiltration</h4>
+                    <p>Water entering through foundation walls or floor can cause mold, deterioration, and structural damage. Often caused by poor drainage or failed waterproofing.</p>
+                    <span class="severity severity-moderate">Severity: Moderate</span>
+                </div>
+
+                <div class="problem-card">
+                    <h4><span class="problem-icon">📏</span> Settlement & Sinking</h4>
+                    <p>When soil beneath the foundation compresses or erodes, the foundation settles unevenly. Results in sloping floors, cracked walls, and stuck doors/windows.</p>
+                    <span class="severity severity-major">Severity: Major</span>
+                </div>
+
+                <div class="problem-card">
+                    <h4><span class="problem-icon">⬆️</span> Heaving</h4>
+                    <p>Expansive soils or frost action can push the foundation upward, causing cracking and structural damage. Common in clay soils and cold climates.</p>
+                    <span class="severity severity-major">Severity: Major</span>
+                </div>
+
+                <div class="problem-card">
+                    <h4><span class="problem-icon">🏚️</span> Bowing or Leaning Walls</h4>
+                    <p>Soil pressure pushing inward can cause basement walls to bow or lean. This is a serious structural issue requiring immediate attention.</p>
+                    <span class="severity severity-major">Severity: Major</span>
+                </div>
+
+                <div class="problem-card">
+                    <h4><span class="problem-icon">🦠</span> Deterioration</h4>
+                    <p>Concrete degradation from water exposure, freeze-thaw cycles, or chemical reactions. May include spalling, scaling, or exposed rebar.</p>
+                    <span class="severity severity-moderate">Severity: Moderate to Major</span>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h3>🔍 Warning Signs to Watch For</h3>
+                <p><strong>Inside:</strong> Sloping floors, doors/windows that stick, cracks in drywall, gaps between walls and ceiling/floor, uneven countertops</p>
+                <p><strong>Outside:</strong> Cracks in foundation walls, gaps around windows/doors, rotation of walls, chimneys pulling away, soil pulling away from foundation</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Repair Methods & Solutions</h2>
+            
+            <h3>Crack Repair</h3>
+            <div class="solution-steps">
+                <h4>For Minor Cracks (less than 1/4")</h4>
+                <ul>
+                    <li>Clean crack thoroughly, removing loose material</li>
+                    <li>Fill with hydraulic cement or polyurethane caulk</li>
+                    <li>Smooth and allow to cure per manufacturer instructions</li>
+                    <li>Monitor for expansion or new cracking</li>
+                </ul>
+            </div>
+
+            <div class="solution-steps">
+                <h4>For Major Cracks (over 1/4" or growing)</h4>
+                <ul>
+                    <li>Have structural engineer assess the cause</li>
+                    <li>Use epoxy or polyurethane injection for structural repair</li>
+                    <li>Consider carbon fiber reinforcement for added strength</li>
+                    <li>Address underlying cause (drainage, settlement, etc.)</li>
+                </ul>
+            </div>
+
+            <h3>Waterproofing Solutions</h3>
+            <div class="solution-steps">
+                <h4>Exterior Waterproofing (Most Effective)</h4>
+                <ul>
+                    <li>Excavate around foundation perimeter</li>
+                    <li>Apply rubberized membrane or bentonite panels</li>
+                    <li>Install perimeter drain tile system</li>
+                    <li>Backfill with proper drainage material</li>
+                    <li>Ensure proper grading away from foundation</li>
+                </ul>
+                <p><strong>Cost:</strong> $80-$150 per linear foot</p>
+            </div>
+
+            <div class="solution-steps">
+                <h4>Interior Waterproofing (Less Invasive)</h4>
+                <ul>
+                    <li>Install interior French drain system</li>
+                    <li>Add sump pump to remove water</li>
+                    <li>Apply waterproof coatings to walls</li>
+                    <li>Install dehumidification system</li>
+                </ul>
+                <p><strong>Cost:</strong> $3,000-$10,000 depending on basement size</p>
+            </div>
+
+            <h3>Underpinning & Stabilization</h3>
+            <p>For settlement or sinking foundations:</p>
+            <div class="solution-steps">
+                <h4>Piering Methods</h4>
+                <ul>
+                    <li><strong>Steel Push Piers:</strong> Driven to bedrock or load-bearing soil, can lift and stabilize foundation</li>
+                    <li><strong>Helical Piers:</strong> Screwed into soil, good for lighter structures or soil conditions</li>
+                    <li><strong>Concrete Piers:</strong> Poured in drilled holes, traditional and cost-effective</li>
+                </ul>
+                <p><strong>Cost:</strong> $1,200-$1,500 per pier (typically need 8-12 piers)</p>
+            </div>
+
+            <div class="solution-steps">
+                <h4>Slabjacking/Mudjacking</h4>
+                <ul>
+                    <li>Inject material beneath sunken slab to lift it</li>
+                    <li>Less invasive and more affordable than replacement</li>
+                    <li>Works well for minor settlement (up to 4 inches)</li>
+                    <li>Can use polyurethane foam (more expensive) or cement slurry</li>
+                </ul>
+                <p><strong>Cost:</strong> $500-$1,300 per slab section</p>
+            </div>
+
+            <h3>Wall Reinforcement</h3>
+            <div class="solution-steps">
+                <h4>For Bowing or Leaning Walls</h4>
+                <ul>
+                    <li><strong>Carbon Fiber Straps:</strong> Bonded to walls to prevent further movement</li>
+                    <li><strong>Steel I-Beams:</strong> Installed vertically to brace and straighten walls</li>
+                    <li><strong>Wall Anchors:</strong> Connect interior walls to exterior ground anchors</li>
+                    <li><strong>Rebuilding:</strong> Severe cases may require partial or complete wall replacement</li>
+                </ul>
+                <p><strong>Cost:</strong> $350-$1,000 per carbon fiber strap; $4,000-$12,000 per I-beam installation</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Repair vs. Replace Decision</h2>
+            <p>Determining whether to repair or replace a foundation is one of the most critical decisions. Here's what to consider:</p>
+
+            <div class="decision-tree">
+                <h3>Decision Factors</h3>
+                
+                <div class="decision-box">
+                    <h4>Consider Repair When:</h4>
+                    <ul>
+                        <li>Damage is localized to specific areas</li>
+                        <li>Structure of foundation is fundamentally sound</li>
+                        <li>Repair costs are less than 50% of replacement</li>
+                        <li>Underlying cause can be addressed</li>
+                        <li>Foundation is relatively young (under 40 years)</li>
+                    </ul>
+                </div>
+
+                <div class="decision-box">
+                    <h4>Consider Replacement When:</h4>
+                    <ul>
+                        <li>Widespread deterioration or multiple major issues</li>
+                        <li>Foundation was poorly constructed initially</li>
+                        <li>Repair costs exceed 50-75% of replacement</li>
+                        <li>Soil problems can't be adequately addressed</li>
+                        <li>Planning major home addition or remodel</li>
+                        <li>Foundation is very old with ongoing problems</li>
+                    </ul>
+                </div>
+            </div>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Factor</th>
+                        <th>Repair</th>
+                        <th>Replace</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Typical Cost</td>
+                        <td>$3,000 - $25,000</td>
+                        <td>$20,000 - $100,000+</td>
+                    </tr>
+                    <tr>
+                        <td>Timeline</td>
+                        <td>Days to 2 weeks</td>
+                        <td>4-8 weeks</td>
+                    </tr>
+                    <tr>
+                        <td>Disruption</td>
+                        <td>Minimal to moderate</td>
+                        <td>Severe (may need to vacate)</td>
+                    </tr>
+                    <tr>
+                        <td>Warranty</td>
+                        <td>Limited (varies by method)</td>
+                        <td>Comprehensive (new foundation)</td>
+                    </tr>
+                    <tr>
+                        <td>Long-term Value</td>
+                        <td>Maintains home value</td>
+                        <td>Increases home value</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="danger-box">
+                <h3>🚨 When Replacement is Necessary</h3>
+                <p>Some situations absolutely require foundation replacement: severe structural failure, foundation beyond repair, major load-bearing changes planned, or when the foundation is causing dangerous conditions. Never attempt to "patch" a foundation that's fundamentally failing—it's unsafe and will cost more in the long run.</p>
+            </div>
+        </div>
+
+        <div class="inspection-checklist">
+            <h3>✓ Foundation Inspection Checklist</h3>
+            <p>Use this checklist during your foundation assessment:</p>
+            
+            <div class="checklist-item">
+                <div class="checklist-checkbox"></div>
+                <div>Examine all interior and exterior walls for cracks (measure and photograph)</div>
+            </div>
+            <div class="checklist-item">
+                <div class="checklist-checkbox"></div>
+                <div>Check for water stains, efflorescence, or moisture in basement/crawl space</div>
+            </div>
+            <div class="checklist-item">
+                <div class="checklist-checkbox"></div>
+                <div>Test doors and windows for proper operation (sticking indicates movement)</div>
+            </div>
+            <div class="checklist-item">
+                <div class="checklist-checkbox"></div>
+                <div>Use level to check floors for sloping or unevenness</div>
+            </div>
+            <div class="checklist-item">
+                <div class="checklist-checkbox"></div>
+                <div>Inspect exterior grading and drainage around foundation</div>
+            </div>
+            <div class="checklist-item">
+                <div class="checklist-checkbox"></div>
+                <div>Check gutters and downspouts for proper function and positioning</div>
+            </div>
+            <div class="checklist-item">
+                <div class="checklist-checkbox"></div>
+                <div>Look for gaps between walls and ceiling or floor</div>
+            </div>
+            <div class="checklist-item">
+                <div class="checklist-checkbox"></div>
+                <div>Examine basement walls for bowing, leaning, or horizontal cracks</div>
+            </div>
+            <div class="checklist-item">
+                <div class="checklist-checkbox"></div>
+                <div>Document all findings with photos, measurements, and dates</div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Prevention & Maintenance</h2>
+            <p>Many foundation problems can be prevented or minimized with proper maintenance:</p>
+
+            <h3>Drainage Management</h3>
+            <ul>
+                <li>Keep gutters and downspouts clean and functional</li>
+                <li>Extend downspouts at least 6 feet from foundation</li>
+                <li>Maintain proper grading (6" drop in first 10 feet)</li>
+                <li>Install swales or French drains if needed</li>
+                <li>Keep soil moist during dry periods (prevents shrinkage)</li>
+            </ul>
+
+            <h3>Regular Inspections</h3>
+            <ul>
+                <li>Conduct visual inspections twice yearly (spring and fall)</li>
+                <li>Monitor known cracks for changes in width or length</li>
+                <li>Check for new signs of water infiltration after heavy rains</li>
+                <li>Hire professional inspection every 3-5 years</li>
+            </ul>
+
+            <h3>Vegetation Management</h3>
+            <ul>
+                <li>Keep large trees at least 20 feet from foundation</li>
+                <li>Remove tree roots that grow against foundation</li>
+                <li>Avoid planting water-hungry plants near foundation</li>
+                <li>Consider root barriers if trees are nearby</li>
+            </ul>
+
+            <div class="info-box">
+                <h3>💰 Cost of Prevention vs. Repair</h3>
+                <p>Proper drainage maintenance costs $200-$500 annually. Foundation repairs start at $3,000 and can exceed $50,000. An ounce of prevention really is worth a pound of cure when it comes to foundations!</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Working with Professionals</h2>
+            
+            <h3>When to Call a Structural Engineer</h3>
+            <ul>
+                <li>Any horizontal or stair-step cracks over 1/4" wide</li>
+                <li>Cracks that are growing or changing</li>
+                <li>Significant floor sloping or settlement</li>
+                <li>Bowing or leaning foundation walls</li>
+                <li>Before purchasing a home with foundation issues</li>
+                <li>When contractors give conflicting advice</li>
+            </ul>
+
+            <h3>Choosing a Foundation Contractor</h3>
+            <ul>
+                <li>Verify licensing and insurance (general liability and workers' comp)</li>
+                <li>Check references and online reviews</li>
+                <li>Get 3-5 detailed written estimates</li>
+                <li>Ask about warranty (should be minimum 5-10 years)</li>
+                <li>Verify they're experienced in specific repair method</li>
+                <li>Ensure they pull proper permits</li>
+                <li>Review contract thoroughly before signing</li>
+            </ul>
+
+            <div class="warning-box">
+                <h3>⚠️ Red Flags</h3>
+                <p><strong>Avoid contractors who:</strong> Pressure you to make immediate decisions, offer prices significantly lower than others, don't provide written estimates, can't provide proof of insurance, won't provide references, suggest repairs without proper inspection, or discourage getting engineer's report.</p>
+            </div>
+        </div>
+
+        <div class="navigation-buttons">
+            <a href="new-build.html" class="nav-button">
+                ← Previous: New Build
+            </a>
+            <a href="layouts.html" class="nav-button">
+                Next: Layouts →
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>Your trusted resource for homebuilding knowledge and guidance. We're here to help you build with confidence.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../../index.html#sections">Building Sections</a></li>
+                    <li><a href="../../about.html">About</a></li>
+                    <li><a href="../../contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Foundation Topics</h4>
+                <ul>
+                    <li><a href="new-build.html">New Build</a></li>
+                    <li><a href="remodel.html">Remodel</a></li>
+                    <li><a href="layouts.html">Layouts</a></li>
+                    <li><a href="budgeting.html">Budgeting</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Have questions? We're here to help!</p>
+                <p>Email: info@homebuildinghandbook.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Homebuilding Handbook. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button id="scrollToTop" class="scroll-to-top" onclick="scrollToTop()">↑</button>
+
+    <script src="../../js/main.js"></script>
+</body>
+</html>
